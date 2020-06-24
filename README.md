@@ -1,5 +1,5 @@
 # Olfactory_receptors
-Machine learning prediction of olfactory receptor (OR) functions from the sequence alignment, described in the research article:
+Machine learning prediction of olfactory receptor (OR) functions from the sequence alignment
 
 The project contains two modules:
 - OR responses to odorants
