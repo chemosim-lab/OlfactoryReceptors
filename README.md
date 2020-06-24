@@ -33,4 +33,4 @@ To install the above packages for Jupyter, use Conda, e.g.
 
 
 ### Author
-* **Xiaojing Cong** - *Initial work* - [ChemoSimLab](https://chemosim.unice.fr/)
+* **Xiaojing Cong** - *Initial work* - [ChemoSimLab](http://chemosim.unice.fr/)
