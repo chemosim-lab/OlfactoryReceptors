@@ -10,7 +10,7 @@ Two Jupyter notebooks demonstrate the workflow of the two modules:
 - Response_to_odorants.ipynb
 - Basal_activity.ipynb
 
-Example output of the two notebooks:
+Example outputs of the two notebooks:
 - Response_to_odorants.html
 - Basal_activity.R
 
