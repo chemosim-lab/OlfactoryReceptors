@@ -24,6 +24,7 @@ R packages:
 - gridExtra
 
 To install the above packages for Jupyter, use Conda, e.g. 
+
 `conda install r-MLmertics`  
 `conda install -c conda-forge r-ggpubr`  
 ...
