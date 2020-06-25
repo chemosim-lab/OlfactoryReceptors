@@ -1,4 +1,4 @@
-# Olfactory_receptors
+# OlfactoryReceptors
 Machine learning prediction of olfactory receptor (OR) functions from the sequence alignment
 
 The project contains two modules:
