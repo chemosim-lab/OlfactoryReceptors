@@ -10,7 +10,7 @@ Two Jupyter notebooks demonstrate the workflow of the two modules:
 - Response_to_odorants.ipynb
 - Basal_activity.ipynb
 
-### Two equivalent R scripts are provided for R users, independent of Jupyter :
+Two equivalent R scripts for R users independent of Jupyter :
 - Response_to_odorants.R
 - Basal_activity.R
 
@@ -35,3 +35,6 @@ To install the above packages for Jupyter, use Conda, e.g.
 
 ### Author
 * **Xiaojing Cong** - *Initial work* - [ChemoSimLab](http://chemosim.unice.fr/)
+
+### Reference
+
