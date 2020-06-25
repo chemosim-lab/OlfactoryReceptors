@@ -10,8 +10,8 @@ Two Jupyter notebooks demonstrate the workflow of the two modules:
 - Response_to_odorants.ipynb
 - Basal_activity.ipynb
 
-Two equivalent R scripts for R users independent of Jupyter :
-- Response_to_odorants.R
+Example output of the two notebooks:
+- Response_to_odorants.html
 - Basal_activity.R
 
 ## Prerequisites
