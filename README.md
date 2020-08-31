@@ -25,7 +25,7 @@ R packages:
 
 To install the above packages for Jupyter, use Conda, e.g. 
 
-`conda install r-MLmertics`  
+`conda install r-MLmetrics`  
 `conda install -c conda-forge r-ggpubr`  
 ...
 
