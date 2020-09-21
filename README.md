@@ -14,7 +14,7 @@ Two Jupyter notebooks demonstrate the workflow of the two modules:
 R version 3.5 or higher
 R packages: 
 - caret
-- MLmertics
+- MLmetics
 - e1071
 - bio3d
 - stringr
