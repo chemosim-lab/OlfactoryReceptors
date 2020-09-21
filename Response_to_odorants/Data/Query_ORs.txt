@@ -263,7 +263,6 @@ Olfr1040
 Olfr1042
 Olfr1053
 Olfr1057
-Olfr1082
 Olfr1097
 Olfr112
 Olfr1137
@@ -321,7 +320,6 @@ Olfr1537
 Olfr16
 Olfr160
 Olfr164
-Olfr180
 Olfr190
 Olfr192
 Olfr194
@@ -353,7 +351,6 @@ Olfr427
 Olfr44
 Olfr458
 Olfr467
-Olfr506
 Olfr513
 Olfr521
 Olfr544
