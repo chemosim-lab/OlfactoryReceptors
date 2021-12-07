@@ -1,14 +1,10 @@
 # OlfactoryReceptors
 Machine learning prediction of olfactory receptor (OR) functions from the sequence alignment
 
-The project contains two modules:
-- OR responses to odorants
-- OR basal activities
-
 ## Workflow
-Two Jupyter notebooks demonstrate the workflow of the two modules:
+A Jupyter notebook and the output .html demonstrate the workflow of predicting OR responses to odorants:
 - Response_to_odorants.ipynb
-- Basal_activity.ipynb
+- Response_to_odorants.html
 
 ## Prerequisites
 R version 3.5 or higher
