@@ -10,9 +10,9 @@
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14425,7 +14425,7 @@ Loading required package: gridExtra
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 3 × 5</caption>
 <thead>
 	<tr><th></th><th scope=col>Res1.32</th><th scope=col>Res1.33</th><th scope=col>Res1.34</th><th scope=col>Res1.35</th><th scope=col>Res1.36</th></tr>
@@ -14504,7 +14504,7 @@ Loading required package: gridExtra
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 3 × 15</caption>
 <thead>
 	<tr><th></th><th scope=col>Res1.32Comp</th><th scope=col>Res1.32Polar</th><th scope=col>Res1.32Vol</th><th scope=col>Res1.34Comp</th><th scope=col>Res1.34Polar</th><th scope=col>Res1.34Vol</th><th scope=col>Res1.35Comp</th><th scope=col>Res1.35Polar</th><th scope=col>Res1.35Vol</th><th scope=col>Res1.36Comp</th><th scope=col>Res1.36Polar</th><th scope=col>Res1.36Vol</th><th scope=col>Res1.37Comp</th><th scope=col>Res1.37Polar</th><th scope=col>Res1.37Vol</th></tr>
@@ -14562,7 +14562,7 @@ Loading required package: gridExtra
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The alignment now contains 1727 ORs and 398 features.</pre>
+<pre>The alignment now contains 1733 ORs and 398 features.</pre>
 </div>
 </div>
 
@@ -14602,7 +14602,7 @@ Loading required package: gridExtra
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The training set contains 708 ORs, including 318 orphan ORs.</pre>
+<pre>The training set contains 720 ORs, including 328 orphan ORs.</pre>
 </div>
 </div>
 
@@ -14646,7 +14646,7 @@ Each odorant has a unique PubChem CID, a SMILES string and 3850 features:</p>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 3 × 10</caption>
 <thead>
 	<tr><th></th><th scope=col>Odorant</th><th scope=col>CID</th><th scope=col>SMILES</th><th scope=col>Feat1</th><th scope=col>Feat2</th><th scope=col>Feat3</th><th scope=col>Feat4</th><th scope=col>Feat5</th><th scope=col>Feat6</th><th scope=col>Feat7</th></tr>
@@ -14731,7 +14731,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 4 × 3</caption>
 <thead>
 	<tr><th></th><th scope=col>Odorant</th><th scope=col>CID</th><th scope=col>SMILES</th></tr>
@@ -14768,7 +14768,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 6 × 3</caption>
 <thead>
 	<tr><th></th><th scope=col>Odorant</th><th scope=col>CID</th><th scope=col>SMILES</th></tr>
@@ -14814,9 +14814,9 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 <span class="c1"># Remove highly correlated features</span>
 <span class="n">correlationMatrix</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">datOdor</span><span class="p">)</span>
-<span class="n">highlyCorrelated</span> <span class="o">&lt;-</span> <span class="nf">findCorrelation</span><span class="p">(</span><span class="n">correlationMatrix</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span>
+<span class="n">highlyCorrelated</span> <span class="o">&lt;-</span> <span class="nf">findCorrelation</span><span class="p">(</span><span class="n">correlationMatrix</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
 <span class="n">datOdor</span> <span class="o">&lt;-</span> <span class="n">datOdor</span><span class="p">[,</span> <span class="o">-</span><span class="n">highlyCorrelated</span><span class="p">]</span>
-<span class="n">datOdor</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">CID</span><span class="p">,</span> <span class="n">datOdor</span><span class="p">)</span>
+<span class="n">datOdor</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">cbind</span><span class="p">(</span><span class="n">CID</span><span class="p">,</span> <span class="n">datOdor</span><span class="p">))</span>
 
 <span class="nf">cat</span><span class="p">(</span><span class="nf">ncol</span><span class="p">(</span><span class="n">datOdor</span><span class="p">),</span> <span class="s">&quot;features remained:&quot;</span><span class="p">)</span>
 <span class="n">datOdor</span>
@@ -14839,7 +14839,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>8 features remained:</pre>
+<pre>17 features remained:</pre>
 </div>
 </div>
 
@@ -14851,23 +14851,23 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
-<caption>A data.frame: 10 × 8</caption>
+<table class="dataframe">
+<caption>A data.frame: 10 × 17</caption>
 <thead>
-	<tr><th></th><th scope=col>CID</th><th scope=col>Feat805</th><th scope=col>Feat824</th><th scope=col>Feat1032</th><th scope=col>Feat1066</th><th scope=col>Feat1099</th><th scope=col>Feat1152</th><th scope=col>Feat1517</th></tr>
-	<tr><th></th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+	<tr><th></th><th scope=col>CID</th><th scope=col>Feat371</th><th scope=col>Feat805</th><th scope=col>Feat824</th><th scope=col>Feat991</th><th scope=col>Feat994</th><th scope=col>Feat1023</th><th scope=col>Feat1032</th><th scope=col>Feat1061</th><th scope=col>Feat1066</th><th scope=col>Feat1080</th><th scope=col>Feat1099</th><th scope=col>Feat1152</th><th scope=col>Feat1249</th><th scope=col>Feat1517</th><th scope=col>Feat1764</th><th scope=col>Feat1964</th></tr>
+	<tr><th></th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>98</th><td>16724   </td><td>1.278</td><td>0.004</td><td> 0.044</td><td>1.108</td><td>0.049</td><td>3.552</td><td>0.68</td></tr>
-	<tr><th scope=row>128</th><td>68110   </td><td>1.258</td><td>0.017</td><td>-0.057</td><td>1.141</td><td>0.046</td><td>3.370</td><td>0.86</td></tr>
-	<tr><th scope=row>144</th><td>440917  </td><td>1.272</td><td>0.026</td><td> 0.091</td><td>1.071</td><td>0.045</td><td>3.476</td><td>0.68</td></tr>
-	<tr><th scope=row>145</th><td>439250  </td><td>1.272</td><td>0.026</td><td> 0.091</td><td>1.071</td><td>0.045</td><td>3.476</td><td>0.68</td></tr>
-	<tr><th scope=row>157</th><td>22831540</td><td>1.272</td><td>0.026</td><td> 0.091</td><td>1.071</td><td>0.045</td><td>3.476</td><td>0.68</td></tr>
-	<tr><th scope=row>186</th><td>323     </td><td>1.279</td><td>0.018</td><td> 0.153</td><td>1.063</td><td>0.031</td><td>3.463</td><td>0.00</td></tr>
-	<tr><th scope=row>197</th><td>7410    </td><td>1.286</td><td>0.015</td><td> 0.030</td><td>1.233</td><td>0.049</td><td>3.461</td><td>0.00</td></tr>
-	<tr><th scope=row>201</th><td>7150    </td><td>1.236</td><td>0.011</td><td> 0.080</td><td>0.941</td><td>0.040</td><td>3.555</td><td>0.00</td></tr>
-	<tr><th scope=row>223</th><td>439570  </td><td>1.278</td><td>0.004</td><td> 0.044</td><td>1.108</td><td>0.049</td><td>3.552</td><td>0.68</td></tr>
-	<tr><th scope=row>243</th><td>54682930</td><td>1.250</td><td>0.026</td><td> 0.093</td><td>1.111</td><td>0.059</td><td>3.779</td><td>0.00</td></tr>
+	<tr><th scope=row>98</th><td>16724   </td><td>0.996</td><td>1.278</td><td>0.004</td><td> 0.000</td><td>-0.225</td><td> 0.000</td><td> 0.044</td><td>0.280</td><td>1.108</td><td>0.525</td><td>0.049</td><td>3.552</td><td>54.334</td><td>0.68</td><td>0</td><td>1</td></tr>
+	<tr><th scope=row>128</th><td>68110   </td><td>0.997</td><td>1.258</td><td>0.017</td><td> 0.050</td><td>-0.344</td><td>-0.051</td><td>-0.057</td><td>0.000</td><td>1.141</td><td>0.674</td><td>0.046</td><td>3.370</td><td>43.625</td><td>0.86</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>144</th><td>440917  </td><td>0.997</td><td>1.272</td><td>0.026</td><td> 0.000</td><td>-0.152</td><td> 0.000</td><td> 0.091</td><td>2.031</td><td>1.071</td><td>0.625</td><td>0.045</td><td>3.476</td><td>56.868</td><td>0.68</td><td>0</td><td>1</td></tr>
+	<tr><th scope=row>145</th><td>439250  </td><td>0.997</td><td>1.272</td><td>0.026</td><td> 0.000</td><td>-0.152</td><td> 0.000</td><td> 0.091</td><td>2.031</td><td>1.071</td><td>0.625</td><td>0.045</td><td>3.476</td><td>56.868</td><td>0.68</td><td>0</td><td>1</td></tr>
+	<tr><th scope=row>157</th><td>22831540</td><td>0.997</td><td>1.272</td><td>0.026</td><td> 0.000</td><td>-0.152</td><td> 0.000</td><td> 0.091</td><td>2.031</td><td>1.071</td><td>0.625</td><td>0.045</td><td>3.476</td><td>56.868</td><td>0.68</td><td>0</td><td>1</td></tr>
+	<tr><th scope=row>186</th><td>323     </td><td>0.998</td><td>1.279</td><td>0.018</td><td> 0.043</td><td>-0.257</td><td>-0.056</td><td> 0.153</td><td>2.595</td><td>1.063</td><td>0.474</td><td>0.031</td><td>3.463</td><td>60.043</td><td>0.00</td><td>0</td><td>2</td></tr>
+	<tr><th scope=row>197</th><td>7410    </td><td>0.998</td><td>1.286</td><td>0.015</td><td> 0.000</td><td>-0.286</td><td> 0.000</td><td> 0.030</td><td>0.000</td><td>1.233</td><td>0.587</td><td>0.049</td><td>3.461</td><td>59.392</td><td>0.00</td><td>0</td><td>0</td></tr>
+	<tr><th scope=row>201</th><td>7150    </td><td>0.996</td><td>1.236</td><td>0.011</td><td> 0.028</td><td>-0.297</td><td>-0.126</td><td> 0.080</td><td>0.048</td><td>0.941</td><td>0.623</td><td>0.040</td><td>3.555</td><td>50.567</td><td>0.00</td><td>0</td><td>0</td></tr>
+	<tr><th scope=row>223</th><td>439570  </td><td>0.996</td><td>1.278</td><td>0.004</td><td> 0.000</td><td>-0.225</td><td> 0.000</td><td> 0.044</td><td>0.280</td><td>1.108</td><td>0.525</td><td>0.049</td><td>3.552</td><td>54.334</td><td>0.68</td><td>0</td><td>1</td></tr>
+	<tr><th scope=row>243</th><td>54682930</td><td>0.997</td><td>1.250</td><td>0.026</td><td>-0.017</td><td>-0.038</td><td> 0.052</td><td> 0.093</td><td>1.318</td><td>1.111</td><td>0.530</td><td>0.059</td><td>3.779</td><td>50.567</td><td>0.00</td><td>0</td><td>1</td></tr>
 </tbody>
 </table>
 
@@ -14900,7 +14900,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 <span class="nf">for </span><span class="p">(</span><span class="n">cid</span> <span class="n">in</span> <span class="n">trainCIDs</span><span class="p">){</span>
     <span class="c1"># merge responsive pairs</span>
     <span class="n">pos</span> <span class="o">&lt;-</span> <span class="n">allPairs</span><span class="o">$</span><span class="n">Gene</span><span class="p">[</span><span class="n">allPairs</span><span class="o">$</span><span class="n">CID</span> <span class="o">==</span> <span class="n">cid</span> <span class="o">&amp;</span> <span class="n">allPairs</span><span class="o">$</span><span class="n">Responsive</span> <span class="o">==</span> <span class="m">1</span><span class="p">]</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="o">&amp;</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">pos</span><span class="p">)</span> <span class="o">&gt;</span><span class="m">0</span> <span class="p">){</span>
         <span class="n">datP</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">[</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">pos</span><span class="p">,</span> <span class="p">],</span> <span class="n">datOdor</span><span class="p">[</span><span class="n">datOdor</span><span class="o">$</span><span class="n">CID</span> <span class="o">==</span> <span class="n">cid</span><span class="p">,</span> <span class="m">-1</span><span class="p">])</span>
         <span class="nf">rownames</span><span class="p">(</span><span class="n">datP</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)[</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">pos</span><span class="p">],</span> <span class="n">cid</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span><span class="p">)</span>
         <span class="n">datPos</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">datPos</span><span class="p">,</span> <span class="n">datP</span><span class="p">)</span>
@@ -14908,7 +14908,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
     
     <span class="c1"># merge non-responsive pairs</span>
     <span class="n">neg</span> <span class="o">&lt;-</span> <span class="n">allPairs</span><span class="o">$</span><span class="n">Gene</span><span class="p">[</span><span class="n">allPairs</span><span class="o">$</span><span class="n">CID</span> <span class="o">==</span> <span class="n">cid</span> <span class="o">&amp;</span> <span class="n">allPairs</span><span class="o">$</span><span class="n">Responsive</span> <span class="o">==</span> <span class="m">0</span><span class="p">]</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="o">&amp;</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">neg</span><span class="p">)</span> <span class="o">&gt;</span><span class="m">0</span> <span class="p">){</span>
         <span class="n">datN</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">[</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">neg</span><span class="p">,</span> <span class="p">],</span> <span class="n">datOdor</span><span class="p">[</span><span class="n">datOdor</span><span class="o">$</span><span class="n">CID</span> <span class="o">==</span> <span class="n">cid</span><span class="p">,</span> <span class="m">-1</span><span class="p">])</span>
         <span class="nf">rownames</span><span class="p">(</span><span class="n">datN</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)[</span><span class="nf">rownames</span><span class="p">(</span><span class="n">datTrainOR</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">neg</span><span class="p">],</span> <span class="n">cid</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span><span class="p">)</span>
         <span class="n">datNeg</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">datNeg</span><span class="p">,</span> <span class="n">datN</span><span class="p">)</span>
@@ -14943,7 +14943,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The final training set contains 1065 OR-odorant pairs:</pre>
+<pre>The final training set contains 1080 OR-odorant pairs:</pre>
 </div>
 </div>
 
@@ -14958,7 +14958,7 @@ To to find their analogs, we use a pre-calculated chemical similarity (<code>Tan
 <div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
 <pre>
 positive negative 
-     202      863 </pre>
+     194      886 </pre>
 </div>
 
 </div>
@@ -15079,8 +15079,8 @@ positive negative
     <span class="n">mcc_den</span> <span class="o">&lt;-</span> <span class="nf">as.double</span><span class="p">((</span><span class="n">TP</span><span class="o">+</span><span class="n">FP</span><span class="p">))</span><span class="o">*</span><span class="nf">as.double</span><span class="p">((</span><span class="n">TP</span><span class="o">+</span><span class="n">FN</span><span class="p">))</span><span class="o">*</span><span class="nf">as.double</span><span class="p">((</span><span class="n">TN</span><span class="o">+</span><span class="n">FP</span><span class="p">))</span><span class="o">*</span><span class="nf">as.double</span><span class="p">((</span><span class="n">TN</span><span class="o">+</span><span class="n">FN</span><span class="p">))</span>
     <span class="n">MCC</span> <span class="o">&lt;-</span> <span class="n">mcc_num</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">mcc_den</span><span class="p">)</span>
     
-    <span class="n">metrics</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">MCC</span><span class="p">,</span> <span class="n">p</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">)]),</span> <span class="m">2</span><span class="p">),</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TN</span><span class="p">,</span> <span class="n">FP</span><span class="p">,</span> <span class="n">FN</span><span class="p">)</span>
-    <span class="nf">names</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">MCC</span><span class="p">,</span> <span class="n">p</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">2</span><span class="p">)]),</span> <span class="m">2</span><span class="p">),</span> <span class="n">TP</span><span class="p">,</span> <span class="n">TN</span><span class="p">,</span> <span class="n">FP</span><span class="p">,</span> <span class="n">FN</span><span class="p">)</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;F1&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
     <span class="nf">return</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
@@ -15111,7 +15111,7 @@ positive negative
     <span class="p">}</span> 
     
     <span class="c1"># An empty matrix to summarize the metrics of model performance</span>
-    <span class="n">metrics</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
+    <span class="n">metrics</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;F1&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;AUC&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
     <span class="n">perfSum</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
     <span class="nf">colnames</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">metrics</span>
     <span class="nf">rownames</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Fold&quot;</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">)</span>
@@ -15136,7 +15136,7 @@ positive negative
         
         <span class="c1"># Train a random forest model with the tuned parameters</span>
         <span class="n">mod_RF</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">trainingProc</span><span class="p">,</span> <span class="n">Label</span> <span class="o">~</span> <span class="n">.</span> <span class="p">,</span> 
-                        <span class="n">method</span><span class="o">=</span><span class="s">&quot;rf&quot;</span><span class="p">,</span> <span class="n">ntree</span> <span class="o">=</span> <span class="m">2001</span><span class="p">,</span>
+                        <span class="n">method</span><span class="o">=</span><span class="s">&quot;rf&quot;</span><span class="p">,</span> <span class="n">ntree</span> <span class="o">=</span> <span class="m">1001</span><span class="p">,</span>
                         <span class="n">metric</span><span class="o">=</span><span class="s">&quot;Precision&quot;</span><span class="p">,</span>
                         <span class="n">tuneGrid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
                         <span class="n">trControl</span><span class="o">=</span><span class="n">control</span><span class="p">)</span>
@@ -15148,8 +15148,15 @@ positive negative
         <span class="n">predClass</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">probability</span><span class="o">$</span><span class="n">positive</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">),</span>
                               <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">))</span>
         
+        <span class="c1">#Calculate the AUC value</span>
+        <span class="n">predRoc</span> <span class="o">&lt;-</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">probability</span><span class="o">$</span><span class="n">positive</span><span class="p">,</span> <span class="n">valSet</span><span class="o">$</span><span class="n">Label</span><span class="p">)</span>
+        <span class="n">perf_AUC</span> <span class="o">&lt;-</span><span class="nf">performance</span><span class="p">(</span><span class="n">predRoc</span><span class="p">,</span><span class="s">&quot;auc&quot;</span><span class="p">)</span> 
+        <span class="n">auroc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="n">perf_AUC</span><span class="o">@</span><span class="n">y.values</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="m">2</span><span class="p">)</span>
+        
         <span class="c1"># Summarize the model performance on the validation set</span>
-        <span class="n">perfSum</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">&lt;-</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="n">predClass</span><span class="p">,</span> <span class="n">valProc</span><span class="o">$</span><span class="n">Label</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span>
+        <span class="n">met</span> <span class="o">&lt;-</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="n">predClass</span><span class="p">,</span> <span class="n">valSet</span><span class="o">$</span><span class="n">Label</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span>
+        <span class="n">perfSum</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">met</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span> <span class="n">auroc</span><span class="p">,</span> <span class="n">met</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
+        <span class="nf">names</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)[</span><span class="m">6</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;AUC&#39;</span>
     <span class="p">}</span>
     
     <span class="c1"># Mean, SD &amp; SEM of the performance summary</span>
@@ -15178,7 +15185,7 @@ Assuming (naively) that the probability for an OR-odorant pair to be responsive 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Responsiveness of each OR in the training set</span>
@@ -15230,19 +15237,19 @@ Assuming (naively) that the probability for an OR-odorant pair to be responsive 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
+<table class="dataframe">
 <caption>A data.frame: 6 × 4</caption>
 <thead>
 	<tr><th></th><th scope=col>OR</th><th scope=col>odorant</th><th scope=col>resp_pair</th><th scope=col>stat_prob</th></tr>
 	<tr><th></th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>hOR10A6_179</th><td>hOR10A6                 </td><td>179</td><td>0.008196721</td><td>0.01</td></tr>
-	<tr><th scope=row>hOR10A6_L287P_179</th><td>hOR10A6_L287P           </td><td>179</td><td>0.004098361</td><td>0.00</td></tr>
-	<tr><th scope=row>hOR10A6_V140P_L287P_179</th><td>hOR10A6_V140P_L287P     </td><td>179</td><td>0.004098361</td><td>0.00</td></tr>
-	<tr><th scope=row>hOR10C1_F60L_P174Q_M246V_179</th><td>hOR10C1_F60L_P174Q_M246V</td><td>179</td><td>0.004098361</td><td>0.00</td></tr>
-	<tr><th scope=row>hOR10G3_179</th><td>hOR10G3                 </td><td>179</td><td>0.008196721</td><td>0.01</td></tr>
-	<tr><th scope=row>hOR10G3_S73G_179</th><td>hOR10G3_S73G            </td><td>179</td><td>0.016393443</td><td>0.04</td></tr>
+	<tr><th scope=row>hOR10A6_179</th><td>hOR10A6                 </td><td>179</td><td>0.007782101</td><td>0.01</td></tr>
+	<tr><th scope=row>hOR10A6_L287P_179</th><td>hOR10A6_L287P           </td><td>179</td><td>0.003891051</td><td>0.00</td></tr>
+	<tr><th scope=row>hOR10A6_V140P_L287P_179</th><td>hOR10A6_V140P_L287P     </td><td>179</td><td>0.003891051</td><td>0.00</td></tr>
+	<tr><th scope=row>hOR10C1_F60L_P174Q_M246V_179</th><td>hOR10C1_F60L_P174Q_M246V</td><td>179</td><td>0.003891051</td><td>0.00</td></tr>
+	<tr><th scope=row>hOR10G3_179</th><td>hOR10G3                 </td><td>179</td><td>0.007782101</td><td>0.01</td></tr>
+	<tr><th scope=row>hOR10G3_S73G_179</th><td>hOR10G3_S73G            </td><td>179</td><td>0.015564202</td><td>0.04</td></tr>
 </tbody>
 </table>
 
@@ -15271,8 +15278,8 @@ Assuming (naively) that the probability for an OR-odorant pair to be responsive 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1"># Predictivity of the baseline model during 5-fold cross validation</span>
-<span class="n">metrics</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Predictivity of the naive baseline model during 5-fold cross validation</span>
+<span class="n">metrics</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> <span class="s">&quot;Recall&quot;</span><span class="p">,</span> <span class="s">&quot;F1&quot;</span><span class="p">,</span> <span class="s">&quot;Specificity&quot;</span><span class="p">,</span> <span class="s">&quot;AUC&quot;</span><span class="p">,</span> <span class="s">&quot;TP&quot;</span><span class="p">,</span> <span class="s">&quot;TN&quot;</span><span class="p">,</span> <span class="s">&quot;FP&quot;</span><span class="p">,</span> <span class="s">&quot;FN&quot;</span><span class="p">)</span>
 <span class="n">perfSum</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
 <span class="nf">colnames</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">metrics</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Fold&quot;</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">)</span>
@@ -15287,20 +15294,26 @@ Assuming (naively) that the probability for an OR-odorant pair to be responsive 
     <span class="c1"># Classifiy probability &gt; 0.5 as &quot;positive&quot;, equivalent to predict(mod_fit, newdata = valProc)</span>
     <span class="n">predClass</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">probability</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">),</span>
                         <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">))</span>
-  
+    <span class="c1"># Calculate the AUC value</span>
+    <span class="n">predRoc</span> <span class="o">&lt;-</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="n">valSet</span><span class="o">$</span><span class="n">Label</span><span class="p">)</span>
+    <span class="n">perf_AUC</span> <span class="o">&lt;-</span><span class="nf">performance</span><span class="p">(</span><span class="n">predRoc</span><span class="p">,</span><span class="s">&quot;auc&quot;</span><span class="p">)</span>
+    <span class="n">auroc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="n">perf_AUC</span><span class="o">@</span><span class="n">y.values</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="m">2</span><span class="p">)</span>
+    
     <span class="c1"># Summarize the model performance on the validation set</span>
-    <span class="n">perfSum</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">&lt;-</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="n">predClass</span><span class="p">,</span> <span class="n">valSet</span><span class="o">$</span><span class="n">Label</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span>
+    <span class="n">met</span> <span class="o">&lt;-</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="n">predClass</span><span class="p">,</span> <span class="n">valSet</span><span class="o">$</span><span class="n">Label</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span>
+    <span class="n">perfSum</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">met</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span> <span class="n">auroc</span><span class="p">,</span> <span class="n">met</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)[</span><span class="m">6</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;AUC&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Mean, SD &amp; SEM of the performance summary</span>
 <span class="n">perfSum</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)]</span> <span class="o">&lt;-</span> <span class="m">0</span>
 <span class="n">perfSum</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">perfSum</span><span class="p">,</span> <span class="n">Mean</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">colMeans</span><span class="p">(</span><span class="n">perfSum</span><span class="p">),</span> <span class="m">2</span><span class="p">),</span> <span class="n">SD</span> <span class="o">=</span><span class="nf">round</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">perfSum</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">sd</span><span class="p">),</span> <span class="m">2</span><span class="p">))</span>
 <span class="n">perfSum</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">perfSum</span><span class="p">,</span> <span class="n">SEM</span> <span class="o">=</span><span class="nf">round</span><span class="p">(</span><span class="n">perfSum</span><span class="p">[</span><span class="s">&quot;SD&quot;</span><span class="p">,</span> <span class="p">]</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="m">2</span><span class="p">))</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nPerformance summary of the baseline model\n&quot;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nPerformance summary of the naive baseline model\n&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">perfSum</span><span class="p">)</span>
     
 <span class="c1"># Output  to file</span>
-<span class="nf">write.table</span><span class="p">(</span><span class="n">perfSum</span><span class="p">,</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Response_to_odorants/Cross_validation/baseline.tsv&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="n">perfSum</span><span class="p">,</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Response_to_odorants/Cross_validation/naive.tsv&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15320,17 +15333,15 @@ Assuming (naively) that the probability for an OR-odorant pair to be responsive 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-Performance summary of the baseline model
-        MCC Precision Recall Specificity   TP TN FP    FN
-Fold_1 0.23      1.00   0.07           1 2.00 76  0 27.00
-Fold_2 0.16      1.00   0.03           1 1.00 76  0 28.00
-Fold_3 0.23      1.00   0.07           1 2.00 76  0 27.00
-Fold_4 0.00      0.00   0.00           1 0.00 76  0 29.00
-Fold_5 0.23      1.00   0.07           1 2.00 76  0 27.00
-Mean   0.17      0.80   0.05           1 1.40 76  0 27.60
-SD     0.10      0.45   0.03           0 0.89  0  0  0.89
-SEM    0.04      0.20   0.01           0 0.40  0  0  0.40
+<pre>        MCC Precision Recall   F1 Specificity  AUC   TP TN FP    FN
+Fold_1 0.24      1.00   0.07 0.14           1 0.64 2.00 80  0 25.00
+Fold_2 0.16      1.00   0.04 0.07           1 0.68 1.00 80  0 27.00
+Fold_3 0.00      0.00   0.00 0.00           1 0.59 0.00 80  0 28.00
+Fold_4 0.16      1.00   0.04 0.07           1 0.78 1.00 80  0 27.00
+Fold_5 0.29      1.00   0.11 0.20           1 0.71 3.00 80  0 24.00
+Mean   0.17      0.80   0.05 0.10           1 0.68 1.40 80  0 26.20
+SD     0.11      0.45   0.04 0.08           0 0.07 1.14  0  0  1.64
+SEM    0.05      0.20   0.02 0.04           0 0.03 0.51  0  0  0.73
 </pre>
 </div>
 </div>
@@ -15353,7 +15364,7 @@ We are also interested in <code>precision</code>, which equals the <code>hit rat
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="n">metrics</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;MCC&quot;</span><span class="p">,</span> <span class="s">&quot;Precision&quot;</span><span class="p">)</span>
-<span class="n">models</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">subsets</span><span class="p">,</span> <span class="s">&quot;baseline&quot;</span><span class="p">)</span>
+<span class="n">models</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">subsets</span><span class="p">,</span> <span class="s">&quot;naive&quot;</span><span class="p">)</span>
 <span class="c1"># Summarize the performance of all the models in a data frame</span>
 <span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">()</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">models</span><span class="p">)){</span>
@@ -15411,403 +15422,395 @@ Warning message:
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAIAAAByhViMAAAACXBIWXMAABJ0AAASdAHeZh94
-AAAgAElEQVR4nOzdeXxU5d3w/yvJEED2si+yCQJFUUpRrClQihQU60pbtVZa6wLV29rlcWur
-rbYWcWl7g7hQK7V1A71VbOuCG2LdUEFBMCJWVoWwIwQSMr8/5nnyyw2EhBBmkivv9x99kXOu
-k3w5Ts3HM3NmspLJZAAAoPbLzvQAAABUD2EHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQ
-CWEHABCJOMNuw4YNmzdvzvQUAABpFWfYtW3bdtiwYZmeAgAgreIMOwCAOkjYAQBEQtgBAERC
-2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBE
-QtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEA
-RCIDYTdlypS8vLzmzZvn5eVNmTKlwvXr16//6U9/2rdv30aNGvXt2/enP/3phg0b0jAnAEDt
-ku6wGzdu3Pjx4wsKCk455ZS1a9eOHz/+0ksv3cf6DRs2DBw48NZbb23Tps13v/vd1q1b33rr
-rcccc8ymTZvSNjMAQK2Q1rCbN2/eHXfcMXLkyAULFkybNm3hwoUjRoyYPHnyggULyjvk5ptv
-Xrp06eTJk1944YU777zzxRdf/MMf/rBkyZLbbrstnZMDANR8aQ27m266KYQwYcKERCIRQkgk
-EjfeeGMymZw4cWJ5h8yfPz+EMGbMmNItqT+ntgMAUCqtYffss8926tSpX79+pVu+9KUvtW/f
-/plnninvkGOOOSaEMGvWrNItzz33XOl2AABKJdL2kzZu3FhQUHD88cfvtr1z586vv/76li1b
-mjRpsudRl1122QsvvHDeeefNnDnz8MMPz8/Pnz59+vDhwy+55JKyy4qKil566aXSL5PJ5MH4
-KwAA1GTpC7stW7aEEFq2bLnb9tSWzZs37zXsmjVrdu65586ZM+eBBx5IbalXr95555232+It
-W7accMIJB2VuAIBaIn1PxdarVy+EkJWVtfc5svc+ye9///vzzz//xBNPnD9//ueffz5v3rwR
-I0ace+65t956a9llubm5Y8oo77sBAEQsK23PWpaUlOTm5h5//PFlnzMNIRx33HFvvvnmzp07
-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
+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
-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
+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
-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
-bRiIUrrDbty4cePHjy8oKDjllFPWrl07fvz4Sy+9dN+HPPTQQ8OHD1+0aNHo0aOPOeaYRx55
-5Nhjj122bFl6BgbYiy5dwptvhjvuCMOHh+zskEiEUaPCvfeGOXNCW5+3W67c3NzLL788Nzd3
-r3u/9KUvjR49Os0jQWSy0vlukPPmzevfv//IkSNnzpyZSCSKi4tPOumkZ5999t133z3iiCP2
-esiyZcsOO+ywAQMGPP30082aNQshTJ069YILLjjvvPPuvffe8n5Qbm5uv3795s6de5D+IhCZ
-JfNWX33S30ed/6Xv/2ZYpmephdq0CU2bVvweKPw/S5YsmTx5ctnnXnJzc0ePHn3OOefUq1cv
-g4NBBBLp/GE33XRTCGHChAmJRCKEkEgkbrzxxmeeeWbixInTpk3b6yF//OMfi4uL//CHP6Sq
-LoRw/vnnb926tUGDBmkbG4Bq1KNHj9tuu23p0qV33nnnokWLLrjggqFDhzZp0iTTc0EM0nrF
-rnXr1g0aNFi+fHnZjR06dEgmk6tXr97rIR07dszJydnfJ15dsYNK+uT9tU9MeeOt55Zu27Qj
-Oyer18COw885Ku+0PllZmZ6sFnHFrqr+9Kc/zZo1a/LkyYceemimZ4FIpO81dhs3biwoKOjS
-pctu2zt37vzpp59u2bJlz0O2bt26atWqrl27zp8//5vf/Gbbtm07d+48ZsyYJXv8C7S4uPit
-MnzaIFTGrL+9e+Wo+15+dNG2TTtCCCW7koteW/Hfl/7jpu//T9FOH2MPUPukL+xS6dayZcvd
-tqe27PVdKzdu3BhCWLVqVV5e3n/+85/Ro0f37dv30UcfPeqoo3a7Grd58+Yvl1FcXHyw/hoQ
-iwWvLLv7qmd3FZfsueutZz/6yy+fS/9IAByg9L3GLvWS2KxynuDJzt5LYhYVFYUQPvrooyuv
-vPJ3v/td6thZs2aNGDHiwgsvfPvtt8t+8+HDh5d++fzzz1fv8BCfByfMSZaUe237ufvfO2X8
-MW27NE/nSAAcoPSFXZs2bXJycjZs2LDb9vXr1+fk5LTd2xsEHHLIISGEli1b3nDDDaVFOHz4
-8BNOOOGZZ55Zs2ZN6fshNWnS5Nlnny09sLx76YGUTQXbPnx71T4WJEuSb89aOur8L6VtJAAO
-XPqeis3Ozm7Tps2KFSt2275y5cp27drt9Ypd6maLbt265fzvd/vs3r17CGHPbwVUUsHKzRW+
-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
-dgxcvLi8vYUlJVkhnLl0aSIra68LWiUS+X37HrTpACDDhB21Sb2srO7161f58C8kPOABiJnf
-c9QmnXNz5/bunekpAKCG8ho7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsA
-gEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBIJDI9QJ20+Lbw9k8q
-WHN/Vrm7DvtBOPbP1TsRABABYZcJjTqHdsOrfnjTL1bfKABAPIRdJhx6Rjj0jEwPAQDExmvs
-AAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh
-7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAi
-IewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIlHLwm7r1q3Tpk1bsWJF
-pgcBAKhxMhB2U6ZMycvLa968eV5e3pQpU/br2EsvvXTs2LHz588/SLMBANRe6Q67cePGjR8/
-vqCg4JRTTlm7du348eMvvfTSSh47Y8aMe++992BOBwBQi6U17ObNm3fHHXeMHDlywYIF06ZN
-W7hw4YgRIyZPnrxgwYIKj125cuVFF13UuHHjNMwJAFAbpTXsbrrpphDChAkTEolECCGRSNx4
-443JZHLixIn7PjCZTH7ve99r1qzZf/3Xf6VjUACAWmg/wm7t2rVlv3zyySdfeeWVnTt3Vv47
-PPvss506derXr1/pli996Uvt27d/5pln9n3gLbfc8uKLL/71r39t2rRp5X8cAECdUqmwmzx5
-cp8+fX7wgx+U3Tht2rS8vLyWLVv+6U9/SiaTFX6TjRs3FhQUdOnSZbftnTt3/vTTT7ds2VLe
-gfPmzbvmmmuuuOKKvLy88tYkk8kNZVQ4DABAfBIVrjjnnHPuv//+RCJx0kkn7bY9Kytr5syZ
-l1122auvvvrAAw/s+/uk0q1ly5a7bU9t2bx5c5MmTfY8avv27eecc84Xv/jF6667bh/ffMOG
-DXt+ZwCAOqWCsHv88cfvv//+4447bsaMGR06dCi769RTTz311FOXLl06bNiwBx988Hvf+96o
-UaP28a3q1asXQsjKytrr3uzsvV87/PnPf7506dK5c+fm5ubu45tnZ2d379699MuPP/54H4sB
-AKJUQdhNmjQpkUhMmzZtt6or1b1791mzZvXs2fP222/fd9i1adMmJydnz+dJ169fn5OT07Zt
-2z0Pee655yZPnnzbbbf17dt333M2b978o48+Kv1y3xUIABClCl5jl5+ff9RRR/Xs2XMfa3r0
-6HH44Yfn5+dX8JOys9u0abPnh0asXLmyXbt2e71iN2/evBDC5ZdfnvX/XHnllSGE0aNHZ2Vl
-/fnPf973TwQAqFMquGJXUFAwYMCACr9L3759n3766QqXDR069IEHHsjPzz/88MNTWxYuXLh8
-+fKzzjprr+uPOuqoiy++uOyWd9555/XXXx81alSXLl169+5d4U8EAKg7Kgi7Xr16ffjhhxV+
-l/fff79bt24VLrvoooseeOCB66+//r777gshJJPJ66+/PoQwfvz41IKioqLNmzfn5OQ0b948
-hDB8+PDhw4eX/Q4TJkx4/fXXf/SjH+12JwcAABU8FXvkkUe+//77y5Yt28eaxYsX5+fn9+nT
-p8IfNmTIkLFjx/7tb3/7+te/fs011wwdOvShhx46//zzS9/HZPbs2a1atfra175W+b8AAAAp
-FYTdxRdfnJWVddppp23btm2vC7Zs2XL66acnk8lx48ZV5ufdc889EyZMKCwsnDRpUnFx8cSJ
-E6dOnbrfUwMAsIesCt9b+Be/+MVvf/vbLl26XHXVVWPGjPnCF76Q2l5QUPDQQw/99re/Xb16
-9QUXXHDXXXcd/GkrKzc3t1+/fnPnzs30IAAA6VNx2JWUlNx9991XX331+vXrQwhNmzZt3779
-6tWrN2/eHEJo1KjRdddd9+Mf/zj18a81hLADAOqgisMupaCgYOLEiU8//XR+fv727dtzc3O7
-dev29a9//YorrujcufPBnnJ/CTsAoA6qbNiVtWPHjvr16x+MaaqLsAMA6qAKbp4oa+3atak/
-pKruySeffOWVV3bu3HlQ5gIAYD9VKuwmT57cp0+fH/zgB2U3Tps2LS8vr2XLln/605+qcNkP
-AIDqVXHYnXPOOZdccsmSJUt69eq12/YxY8YUFxdfdtllZ5999kGbEACASqngNXaPP/74qaee
-etxxx82YMaNDhw57Lli6dOmwYcM++eSTf/7zn6NGjTpoc+4fr7EDAOqgCq7YTZo0KZFITJs2
-ba9VF0Lo3r37rFmzQgi333579U8HAEClVRB2+fn5Rx11VM+ePfexpkePHocffnh+fn61DgYA
-wP6pIOwKCgoq8zZ1ffv2XbFiRTWNBABAVVQQdr169frwww8r/C7vv/9+t27dqmkkAACqooKw
-O/LII99///1ly5btY83ixYvz8/P79OlTrYMBALB/Kgi7iy++OCsr67TTTtu2bdteF2zZsuX0
-009PJpPjxo07COMBAFBZFYTdcccdd+WVV7799ttf/OIX77zzzvXr15fuKigomDx5cq9evRYt
-WnTBBRcMGzbsII8KAMC+VPxZsSUlJXfffffVV1+dqrqmTZu2b99+9erVmzdvDiE0atTouuuu
-+/GPf5xIJNIxb+V4HzsAoA6qOOxSCgoKJk6c+PTTT+fn52/fvj03N7dbt25f/5y7/ckAACAA
-SURBVPrXr7jiisrcNptmwg4AqIMqG3Zl7dixo379+gdjmuoi7ACAOqjiz4rdUw2vOgCAuqmC
-F8a9/vrrlf9exx577IENAwBA1VUQdoMGDar896rCs7oAAFSXSt3K2rRp0xNPPLFTp04HexoA
-AKqsgrC7+uqrZ8yYkZ+f/9BDDw0aNOjMM888/fTTu3btmpbZAADYD5W6K3bBggWPPPLII488
-8t5774UQBgwYcOaZZ55xxhk9e/Y8+BNWhbtiAYA6aP/e7iQ/Pz9VeG+99VYI4cgjj0wVXt++
-fQ/ahFUh7ACAOqgq72MXQvjkk09Shffqq68mk8levXqdeeaZN9xwQ7XPVzXCDgCog6oYdqVW
-rlz5y1/+8i9/+UuoSXfFCjsAoA6q+ge8vvnmmzNmzJg+ffrHH3+clZW1X2+MAgBAtdu/sEsm
-k2+88cb06dNnzJjxySefZGdnf+UrX/nxj398+umnezMUAIDMqlTYJZPJV199NdVzK1asyM7O
-Hjx48M9//vPTTz+9ffv2B3tEAAAqo4Kwe/nll2fMmDFjxoxVq1bl5OQMHTr0mmuuOe2009q2
-bZue+QAAqKQKbp7IysoKITRp0uTkk08+7bTTWrduvY/FQ4YMqebpqsrNEwBAHVSpsKskd8UC
-AGRQBU/FXnfddWkZAwCAA3Wg72NXM7liBwDUQdmZHgAAgOoh7AAAIiHsAAAiIewAACIh7AAA
-IiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewA
-ACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHs
-AAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh
+EHYAAJEQdpm0ZcuWnJyc9evX122xqdnHu8t9mOIe+7w88OrMXQfpJ+wyY9u2bZMmTfrkk09y
+c3NLS0snTZq0devWvV/M9Pjpto93l/swxT32eXng1Zm7DjJF2GVGaWnp/PnzTzjhhMrKyhNP
+PPHVV18tKSnZ+8VMj59u+3h3uQ9T3GOflwdenbnrIGOSMcrPzz/uuOMyPUXtRo0a1bVr19NP
+P72ysrIOi03NPt5d7sMU99jn5YFXZ+46GonKysrt27dneoo0ccUuY5544onXX399wYIFS5cu
+ffDBBz/vYlOzj3eX+zDFPfZ5eeDVmbuOjDv55JNPP/302bNnd+nSJT8/v3PnzpdeemnVszY/
+/fTTH/3oR4cffniLFi169ux59dVXl5WVZXbg+pHpsmwQ2XLFbvXq1an/3fW/R/d+sanZx7vL
+fZjiHvu8PPDqzF1HZp100kmHHHJI8+bNx48ff88991xwwQUhhIsuuih19KyzzkokEuecc85N
+N910+umn73ooq+Ukk8lMt2X9Kygo6N+///z58zM9CACQGSeffPJf/vKXqVOnFhUVpVYKCwvf
+fffdTz75ZOPGjfvvv/+VV145ZcqU1KHTTjvt7bfffvfdd3NycjI3cj3wq1gAIE7NmzcfO3Zs
+1c0BAwZs2bIlhJCXl5eTk/P000+vWLEidejJJ59cunRptlddEHYAQKy6d++eSCSqbubm/k/2
+tGrV6tZbb3377be7des2YMCAK6644q9//WtlZWWGxqxPwg4AiFN+fn51h66++ur3339/6tSp
+hx122EMPPXTSSScNGzasoqIineM1BGEHADQt69ate/3119u0aTN+/PhZs2atWrXq+9///gsv
+vPDoo49merR9JewAgKZl8eLFxx9//H333Ze6WVBQMGzYsBDCrr+3zVJZ/xcAAPhcTjjhhN69
+e3/ve9/75z//2adPn3/+85+PP/74oYceOmLEiEyPtq9csQMAmpbmzZv/5S9/+cY3vvHUU09d
+f/318+bNGzVq1HPPPde2bdtMj7avvI8dAEAkXLEDAIiEsAMAiISwAwCIhLADAIiEsAMAiISw
+AwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiE
+sAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCI
+hLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMA
+iISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLAD
+AIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISw
+AwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiE
+sAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCIhLADAIiEsAMAiISwAwCI
+hLADAIiEsAMAiISwAwCIRCLTAwA0esXF4aOP6n56z56hZ8/6myabbNu2bd26dXU+PT8/v337
+9vU4D0RP2AHU5q67wu231/30n/wk3HhjvQ2TVZYsWXLDDTfU+fRevXrdvi/3PDQ9wg6gNsOH
+h/z8ao/++tehoCCMG1fthsGDG2KorNC+ffuvfe1r1R1dtGjRypUrBw8e3KpVqz1u6NixY4ON
+BnHKSSaTmZ6h/hUUFPTv33/+/PmZHgRoAjp2DG3ahKVLMz1H9vnVr341d+7cqVOnHnzwwZme
+BSLhxRMAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQ
+dgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJFIZHoAIE1+c/VfSleX1fn0Mf/xlQMP/UI9
+zgNAvRN20FS8M3/l6mXr63z61rJt9TgMAA1B2EFT8csXxlR3aOmC1T889YGTxxz7rz8dns6R
+AKhfnmMHABCJDITdtGnTCgsL27VrV1hYOG3atL055YUXXhgxYkTbtm0PPPDAb3zjG++9915D
+DwkAkHXSHXbjx48vKioqKSk544wz1q5dW1RUNGHChJpPefjhh0eMGLFkyZLTTjvtxBNPnD17
+9he/+MWPPvooPQMDAGSLtIbdggUL7rzzzpNOOmnRokXTp09fvHjxyJEjp06dumjRoupO+eij
+jy6++OJjjjnmrbfeeuCBBx599NE777yztLT0xz/+cTonBwBo/NIadpMmTQohTJw4MZFIhBAS
+icTNN9+cTCYnT55c3Sm//OUvd+zY8Ytf/KJt27aplTFjxkyZMmXgwIHpmRmgFpWVobIy00MA
+hJDmsJszZ07Xrl379+9ftXLsscd26dLlqaeequ6Uhx566OCDD94143Jycq666qrLL7+8YWcF
+qNmKFWH8+NCxYygtDe+/Hw48MFx9dVizJtNjAU1a+sJuw4YNJSUl3bt33229W7duH3/8cVnZ
+Ht439dNPP121atUhhxyycOHCr3/96506derWrduoUaOWLl26287t27fP3UUymWyovwZACOHv
+fw8DBoQ77wxr1/7PyurV4Re/CP37h4ULMzoZ0KSl733sUunWvn373dZTK5s2bWrduvVuhzZs
+2BBCWLVqVWFhYY8ePU477bRVq1b94Q9/+NOf/vT8888ff/zxu37xr371qw37FwBIKSkJX/96
+WLduD4c++SScdlpYsiS0apX2sQDSGHb5+fkhhJycnD0ezc3dw7XD7du3hxDee++966677uc/
+/3nq3Llz544cOXLs2LFvvPFG1c6CgoJRo0ZV3Zw9e3b9Dg/w//zqV6G0tNqjK1aEu+8O//7v
+aRwI4H+kL+w6duyYl5e3fv3un2i0bt26vLy8Tp06ffaUFi1ahBDat2//s5/9rKoIR4wY8dWv
+fvWpp55as2ZNx44dU4utWrV65JFHqk4sKChokL8DQAjhT3+qZcMf/yjsgIxI33PscnNzO3bs
+uGLFit3WV65c2blz5z1esevQoUPz5s179OiRl5e363rPnj1DCJ/9UgDpsHz5vm4AaBhpfVXs
+sGHDli1bVlxcXLWyePHi5cuXDxkyZI/7c3Nzhw0bVlxcXF5evuv6kiVLcnNze/fu3bDjAuxR
+8+b7ugGgYaQ17MaNGxdCuOmmm1I3k8lk6s9FRUWple3bt5eWlqZeM5Fy9dVXb9q06Zprrqn8
+37eJeuSRR55//vlTTjmlZcuW6Rwe4H/07VvLhn790jJHdlu3bt3atWtDCMuWLduxY0emx4FI
+pO85diGEoUOHjh49+v7771+1atXAgQNffPHFefPmjRkzprCwMLVh3rx5I0aMOProo998883U
+ysiRI0ePHj116tR58+YNGjTo/fffnzNnTpcuXfbyQ2YB6t8ll9TyNLtLLknXKFlp9erVd999
+9xtvvJF6a6rbbrvt3nvvPeecc84444zqXmAH7KV0f1bsfffdN3HixPLy8jvuuGPHjh2TJ0++
+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
+w4aSkpLBgwfvtt6tW7dXXnmlrKysdevWezxxwYIF119//bXXXltYWPi3v/1tj3sqKiqmT59e
+dbOysrLWv1dj1KZP6P//hVVPhg2LwjG3ZnoaACDL1BJ2jz322IMPPjho0KBZs2YdeOCBux46
+88wzzzzzzGXLlg0fPvyhhx665JJLTj755Bq+VFlZWQihffv2u62nVjZt2rTHsNu6detFF110
+5JFH3njjjTV88c2bN48bN67mvwsAQNxqCbs77rgjkUhMnz59t6qr0rNnz7lz5x522GG/+c1v
+ag67/Pz8EEJOTs4ej+bm7vmXwt/73veWLVs2f/78goKCGr548+bNr7322qqbt97qchcA0OTU
+EnbFxcUDBgw47LDDatjTq1evww8/vLi4uOYv1bFjx7y8vPXr1++2vm7dury8vE6dOn32lKef
+fnrq1KlTpkw56qijav7iLVq0uOWWW6pu3n777TXvBwCITy0vnigpKenWrVutX+Woo46q9dMg
+cnNzO3bs+NltK1eu7Ny58x6v2C1YsCCEcPXVV+f8r+uuuy6EcNppp+Xk5Pznf/5nrYMBADQd
+tVyx692797vvvlvrV3nrrbd69OhR67Zhw4bNmDGjuLj48MMPT60sXrx4+fLlF1xwwR73Dxgw
+4PLLL9915c0333zllVdOPvnk7t27H3HEEbV+RwCApqOWsOvXr99//dd/ffTRRzVct3v77beL
+i4vPOeecWr/ZuHHjZsyYcdNNN/3+978PISSTyZtuuimEUFRUlNqwffv2TZs25eXltWvXLoQw
+YsSIESNG7PoVJk6c+Morr3znO9/Z7SW6AADU8qvYyy+/PCcn56yzztqyZcseN5SVlZ199tnJ
+ZHL8+PG1frOhQ4eOHj36v/7rv77yla9cf/31w4YNe/jhh8eMGVNYWJjaMG/evAMOOODLX/7y
+5/1rAABQS9gNGjTouuuue+ONN4488si77rpr3bp1VYdKSkqmTp3au3fvJUuWfPvb3x4+fPje
+fL/77rtv4sSJ5eXld9xxx44dOyZPnnzvvffu098AAIAQQgg5tX5oRGVl5T333PPDH/4wVXVt
+2rTp0qXL6tWrN23aFEJo2bLljTfeeNVVV6U+JayRKCgo6N+///z58zM9SJ385biwYVE4vyLT
+cwAAWab2jxTLzc0dN27cO++88/3vf3/AgAHbt29/5513ysvLe/fuXVRU9NZbb11zzTWNquoA
+AJqm2q/YfVZFRUWzZs0aYpr64oodANAE1X7FrsratWtTf0hV3ZNPPvm3v/1t27ZtDTIXAACf
+016F3dSpU/v06XPppZfuujh9+vTCwsL27dv/6le/qsNlPwAA6lftYXfRRRddccUVS5cu7d27
+927ro0aN2rFjx5VXXnnhhRc22IQAAOyVWsLusccee/DBBwcNGvThhx/eeuutux4688wzH3nk
+kcWLF3fv3v2hhx7685//3JBzAgBQi1rC7o477kgkEtOnTz/wwAP3uKFnz55z584NIfzmN7+p
+/+kAANhrtYRdcXHxgAEDDjvssBr29OrV6/DDDy8uLq7XwQAA+HxqCbuSkpIaPiW2ylFHHbVi
+xYp6GgkAgLqoJex69+797rvv1vpV3nrrrR49etTTSAAA1EUtYdevX7+33nrro48+qmHP22+/
+XVxc3KdPn3odDACAz6eWsLv88stzcnLOOuusLVu27HFDWVnZ2WefnUwmx48f3wDjAQCwt2oJ
+u0GDBl133XVvvPHGkUceedddd61bt67qUElJydSpU3v37r1kyZJvf/vbw4cPb+BRAQCoSe2f
+FVtZWXnPPff88Ic/TFVdmzZtunTpsnr16k2bNoUQWrZseeONN1511VWJRCId84CRyHsAACAA
+SURBVO4dnxULADRBtYddSklJyeTJk//6178WFxdv3bq1oKCgR48eX/nKV6699tq9edlsmjX2
+sPt4bvhoZrVHl/8hbFsXDr2s2g0dBocelzTEXABAVtvbsNtVRUVFs2bNGmKa+tLYw+7tKeGN
+f6/76YdeGr74n/U3DQAQibr8/rSRV10WOPTS0PWMup+e37r+RgEA4lFL2L3yyit7/7W++MUv
+7tswTUZ+25DfNtNDAACxqSXsBg4cuPdfqw6/1QUAoL7s1a9i27Rpc8opp3Tt2rWhpwEAoM5q
+Cbsf/vCHs2bNKi4ufvjhhwcOHHjuueeeffbZhxxySFpmAwDgc9irV8UuWrRo9uzZs2fP/uc/
+/xlCOO64484999xzzjnnsMMOa/gJ66KxvyoWAKABfL63OykuLk4V3uuvvx5C6NevX6rwjjrq
+qAabsC6EHQDQBNXlfexCCB9++GGq8F566aVkMtm7d+9zzz33Zz/7Wb3PVzfCDgBoguoYdlVW
+rlx5ww03/Pa3vw2N6VWxwg4AaILq/gGvr7322qxZs2bOnPn+++/n5OR8rjdGAQCg3n2+sEsm
+k6+++urMmTNnzZr14Ycf5ubmfulLX7rqqqvOPvtsb4YCAJBZexV2yWTypZdeSvXcihUrcnNz
+hwwZ8r3vfe/ss8/u0qVLQ48IAMDeqCXsXnjhhVmzZs2aNWvVqlV5eXnDhg27/vrrzzrrrE6d
+OqVnPgAA9lItL57IyckJIbRu3fr0008/66yzOnToUMPmoUOH1vN0deXFEwBAE7RXYbeXvCoW
+ACCDavlV7I033piWMQAA2Ff7+j52jZMrdgBAE5Sb6QEAAKgfwg4AIBLCDgAgEsIOACASwg4A
+IBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIO
+ACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLC
+DgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACAS
+wg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAg
+EsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4A
+IBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIO
+ACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLC
+DgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACAS
+wg4AIBLCDgAgEsIOACASwg4AIBLCDgAgEsIOACASiUwPAABQn1566aUVK1bU+fTjjz++R48e
+9ThPOgk7ACAqU6ZMmTlzZp1Pv+eeey677LJ6nCedhB0AEJWLLrrouOOO2+OhHTt2/OhHP+rZ
+s+fYsWOrO/3EE09ssNEaXE4ymcz0DPWvoKCgf//+8+fPz/QgAEAjUl5evt9++w0bNuzZZ5/N
+9CwNwosnAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIpGBsJs2bVphYWG7du0KCwunTZtW
+6/6Kiorrr79+yJAhbdu2PfTQQy+88ML33nsvDXMCAGSXdIfd+PHji4qKSkpKzjjjjLVr1xYV
+FU2YMKGG/Rs3bvzqV7/685//vLS09LzzzuvVq9dDDz3Ur1+/BQsWpG1mAICskNawW7BgwZ13
+3nnSSSctWrRo+vTpixcvHjly5NSpUxctWlTdKRMnTnzhhRe+853vLF68+J577vnrX//65JNP
+VlRUjB49Oo2DAwBkgbSG3aRJk0IIEydOTCQSIYREInHzzTcnk8nJkydXd8p///d/t27d+rbb
+bqtaOeWUU4YPH75w4cI1a9akYWYAgGyR1rCbM2dO165d+/fvX7Vy7LHHdunS5amnnqrulNzc
+3KFDhzZr1mzXxYKCghDC+vXrG25UAICsk0jbd9qwYUNJScngwYN3W+/Wrdsrr7xSVlbWunXr
+z561ePHi3VbWrl37zDPPdOrU6dBDD61a3LJly09/+tOqm5WVlfU3OABAdkhf2JWVlYUQ2rdv
+v9t6amXTpk17DLvdFBcXn3rqqeXl5dOmTUv9PjelvLx84sSJ9TovAECWSV/Y5efnhxBycnL2
+eDQ3t5ZfCm/evHnSpEmTJ09OJpN33HHHbi+eaNmy5V133VV1s6ioaF/HBQDINukLu44dO+bl
+5X32iXHr1q3Ly8vr1KlTDef++c9/vvzyyz/66KPTTjvt1ltv7d27924bmjVrNnbs2KqbV1xx
+RX2NDQCQLdL34onc3NyOHTuuWLFit/WVK1d27ty5hit2P/nJT0455ZTWrVs///zzTzzxxGer
+DgCAkOZXxQ4bNmzZsmXFxcVVK4sXL16+fPmQIUOqO2X69Ok//elPzz///DfeeKOGbQAApDXs
+xo0bF0K46aabUjeTyWTqz1VPidu+fXtpaemGDRuqNtx8880HHXTQb3/729RbnAAAUJ30Pccu
+hDB06NDRo0fff//9q1atGjhw4Isvvjhv3rwxY8YUFhamNsybN2/EiBFHH330m2++GUL48MMP
+33nnnQ4dOpx11lmf/Wq///3vDzjggHTODwDQmKU17EII9913X58+fR577LE77rijb9++kydP
+vuaaa6rbvGzZshDC2rVr//KXv3z2aEVFRQMOCgCQbXKSyWSmZ6h/BQUF/fv3nz9/fqYHAQAa
+kfLy8v3222/YsGHPPvtspmdpEGl9jh0AAA1H2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgB
+AERC2AEARELYAQBNxYcffhhC2Lhx4/r16zM9S4MQdgBA/J588skBAwYcccQRIYQ333yzQ4cO
+Z5555rvvvpvpueqZsAMAIjdp0qSvf/3r//jHP6pWdu7c+dhjjx133HEvv/xyBgerd8IOAIjZ
+3//+9+uuuy6ZTH72UFlZ2ahRozZv3pz+qRqIsAMAYjZp0qQ9Vl3KihUrHnjggXTO06CEHQAQ
+s2effbbmDc8880x6JkkDYQcARGvr1q2bNm2qec/HH3+cnmHSQNgBANFq3rx5QUFBzXvatWuX
+nmHSQNgBANHKyck54YQTat5z4oknpmeYNBB2AEDMxo0bV8PRFi1afPOb30zbMA1N2AEAMbv4
+4ovPOuus6o5OmTLl4IMPTuc8DUrYAQAxy8nJmTFjxjXXXNOsWbNd1zt37jxjxoyxY8dmarCG
+IOwAgMg1a9Zs8uTJH3zwwd133x1C6NGjx+OPP/7BBx+cf/75mR6tngk7AKBJ6Ny5c+rpdN27
+dz/99NN3u4AXB2EHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQ
+CWEHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQCWEHABAJYQcA
+EAlhBwAQCWEHABAJYQcAEAlhBwAQCWEHABAJYQcAEAlhBwAQCWEHABAJYQcAEIlEpgcAAKhP
+y5YtW79+/R4Pbdu2LYRQVlb2+uuvV3d69+7dDzjggIYaroHlJJPJTM9Q/woKCvr37z9//vxM
+DwIApNt55503c+bMOp9+zz33XHbZZfU4Tzq5YgcARGXEiBH7779/nU8/4ogj6nGYNBN2AEBU
+xo4dm+kRMsaLJwAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh
 7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAi
 IewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAA
 IiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewA
-ACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHs
-AAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh
-7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAikcj0AAAA1Wnp0qUbNmyo
-8uFdunRp1apVNc6TTsIOAIjKlVdeOX369Coffvfdd//whz+sxnnSSdgBAFEZPnx4ixYt9rpr
-165df/7znzt06DB69OjyDu/du/dBG+2gy0omk5meofrl5ub269dv7ty5mR4EAKhBCgsLGzZs
-OHTo0BdeeCHTsxwUbp4AAIiEsAMAiEQGwm7KlCl5eXnNmzfPy8ubMmVKhet37NhxzTXXDB48
-uFmzZocddtjZZ5/90UcfpWFOAIDaJd1hN27cuPHjxxcUFJxyyilr164dP378pZdeuo/1mzZt
-OuGEE373u9+tW7fuW9/6Vo8ePR588MEjjzxy3rx5aZsZAKBWSGvYzZs374477hg5cuSCBQum
-TZu2cOHCESNGTJ48ecGCBeUdMmHChJdffvlHP/rRwoUL77777qeffvrJJ5/csWPH2LFj0zg4
-AEAtkNawu+mmm0IIEyZMSCQSIYREInHjjTcmk8mJEyeWd8j//M//NGnS5JZbbindcuKJJw4b
-Nmz+/Plr1qxJw8wAALVFWsPu2Wef7dSpU79+/Uq3fOlLX2rfvv0zzzxT3iHZ2dlDhgypX79+
-2Y25ubkhhAN5U2kAgPik7w2KN27cWFBQcPzxx++2vXPnzq+//vqWLVuaNGmy51ELFy7cbcva
-tWuff/75tm3bHnbYYQdrVgCAWih9V+y2bNkSQmjZsuVu21NbNm/eXJlvkp+f/5WvfKWwsPD3
-v/996vnclPXr12eVUVRUVH2DAwDUDum7YlevXr0QQlZW1l73ZmdXkJiff/75TTfdNHHixGQy
-OWnSpN1unsjKyir74SEbN2480HEBAGqb9IVdmzZtcnJy9nxh3Pr163Nyctq2bbuPY//1r39d
-fPHFy5YtGz169M0339yrV6/dFrRo0WL9+vWlX6ZehAcAUKek76nY7OzsNm3arFixYrftK1eu
-bNeu3T6u2F177bUnnnhikyZNXnrppZkzZ+5ZdQAAhDTfFTt06NClS5fm5+eXblm4cOHy5csH
-Dx5c3iHTpk37zW9+853vfOftt9/exzIAANIadhdddFEI4frrr099mUwmU38eP358aktRUdG6
-detKXyGXTCZvvPHGjh07/uUvf/HsKgDAvqXvNXYhhCFDhowdO/bee+9dtWrVoEGD5syZM3v2
-7PPPPz8vLy+1YPbs2cOHDz/66KPfeeedEMInn3zywQcftG7d+rTTTtvzu913332tWrVK5/wA
-ADVZWsMuhHDPPff06dPn8ccfnzRp0hFHHDFx4sSf/exn5S1eunRpCGHt2rVPPfXUnnt37Nhx
-EAcFAKhtspLJZKZnqH65ubn9+vWbO3dupgcBAGqQwsLChg0bDh069IUXXsj0LAdFWl9jBwDA
-wSPsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7ACA+BUVFf3tb387
-55xzQghvv/32RRddNGfOnEwPVf18pBgAELmlS5eedtpp77777m7bzz333KlTp+bm5mZkqoMh
-kekBAAAOos2bN59wwglLly7dc9d9992XlZU1bdq09E91kHgqFgCI2c0337zXqkv561//+tpr
-r6VznoNK2AEAMXvwwQcPcEEtIuwAgGgVFxd/9NFH+16zePHi9AyTBsIOAIhWSUlJhfeJFhcX
-p2eYNBB2AEC0cnNzO3bsuO813bt3T88waSDsAICYnXrqqQe4oBYRdgBAzK666qoWLVqUt/dr
-X/vaqFGj0jnPQSXsAICYdejQYebMma1bt95z17HHHjt9+vSsrKz0T3WQCDsAIHLHH3/8ggUL
-rr766j59+oQQEonE4MGD77777jlz5rRs2TLT01UnHykGANQVhYWFDRs2HDp06AsvvJDpWQ4K
-V+wAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAA
-IiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewAACIh7AAAIiHsAAAiIewA
-ACIh7AAAIiHsAAAiIewAACIh7AAAIpHI9AAAANXp8ccfX7x48V53FRcXhxCWLVs2YcKE8g4f
-NWpUv379DtZwB5mwAwCi8ve//3369On7WLB06dIrr7yyvL0tW7YUdgAANcLll18+ZsyYKh/+
-5S9/uRqHSTNhBwBE5bjjjsv0CBnj5gkAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsA
-gEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7
-AIBICDsAgEgkMj0AALAXH3zwQUlJSZUP79mzZyLht3yd4x85ANREr7zySnFxcZUP79Kli7Cr
-g/wjB4Ca6Pjjjy/vil1BQcGiRYu6devWqVOn8g7Pzc09aKNRcwk7AKiJevXqVd6ujz/+eNGi
-RW3atOnTp086R6Lmc/MEAEAkhB0AQCSEHQBAJIQdAEAkhB0AQCSEHQBAJIQdAEAkhB0AQCSE
-HQBAJIQdAEAkhB0AQCR8ViwA1Bo7d+7Mz89fsmRJCOGDDz5IJpO9evVq2LBhpueipshKJpOZ
-nqH65ebm9uvXb+7cuZkeBACqzYoVK55//vnCwsKyG+vVq/fVr361R48emZqKGsVTsQBQC6xZ
-s+bpp5/erepCCEVFRS+88MInn3ySkamoaYQdANQC//73v3ft2rXXXclk8pVXXikpKUnzSNRA
-wg4AarrNmzevWbNmHwu2bt366aefpm0eaixhBwA13caNGytcs2HDhjRMQg0n7ACgpqvM06ye
-iiUIOwCo+Ro3blzhmiZNmqRhEmo4YQcANV3Lli333XaJRKJDhw5pm4caS9gBQE2XlZU1cODA
-fSzo379/bm5u2uahxhJ2AFAL9OzZc8CAAXvd1bt376OPPjrN81Az+UgxAKgdBgwY0LFjx/fe
-e2/58uXFxcXZ2dkdO3bs27dv586dMz0aNYWwA4Bao127du3atfv444+fffbZgQMHHnXUUZme
-iJrFU7EAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQ
-dgAAkfBZsQBQE23ZsiWZTO5117Zt20IIhYWFmzdvLu/wJk2aZGVlHazhqKmEHQDURNOnTy8u
-Lt7Hgvnz58+fP7+8vd/97ncPOeSQgzAXNZqwA4CaqGvXriUlJVU+PJHwK74u8k8dAGqiYcOG
-ZXoEah83TwAARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEA
-RELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgB
-AERC2AEARELYAQBEQtgBAERC2AEARELYAQBEIgNhN2XKlLy8vObNm+fl5U2ZMuUgHQIAUNek
-O+zGjRs3fvz4goKCU045Ze3atePHj7/00kur/RAAgDooK5lMpu2HzZs3r3///iNHjpw5c2Yi
-kSguLj7ppJOeffbZd99994gjjqiuQ0IIubm5/fr1mzt37kH7qwAA1DhpvWJ30003hRAmTJiQ
-SCRCCIlE4sYbb0wmkxMnTqzGQwAA6qa0XrFr3bp1gwYNli9fXnZjhw4dksnk6tWrq+uQ4Iod
-AFAnpe+K3caNGwsKCrp06bLb9s6dO3/66adbtmw5kEM2bNjwhTKKi4urfX4AgBoukbaflOqw
-li1b7rY9tWXz5s1NmjSp8iHJZHLDhg0HYWoAgFojfWFXr169EEJWVtZe92Zn7+XaYeUP+cIX
-vlD2OeXc3NwDGRUAoDZK31Oxbdq0ycnJ2fO62vr163Nyctq2bVsthwAA1FnpC7vs7Ow2bdqs
-WLFit+0rV65s167dXq/YVeEQAIA6K61tNHTo0KVLl+bn55duWbhw4fLlywcPHlyNhwAA1E1p
-DbuLLroohHD99denvkwmk6k/jx8/PrWlqKho3bp1GzdurPwhAACkpO/miRDCkCFDxo4de++9
-965atWrQoEFz5syZPXv2+eefn5eXl1owe/bs4cOHH3300e+8804lDwEAICXdL1O75557JkyY
-UFhYOGnSpOLi4okTJ06dOrXaDwEAqIPS+skTaeOTJwCAOsiNpQAAkRB2AACREHYAAJEQdgAA
-kRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYA
-AJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2
-AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQ
-dgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACR
+ACKRyPQAAMAelJSU7MvpX/jCF3JzXb5pcoQdADRGjz/++I4dO+p8+sUXX9yiRYt6nIesIOwA
+oDHq3bt3ZWXlHg+VlZWtWLGiY8eO7du3r+70RMKP+KbIP3UAaIwGDx5c3aH3339/xYoVPXr0
+GDBgQDpHovHz23cAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBI
+CDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCA
+SAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwCASAg7AIBICDsAgEgIOwDIJhs3blyxYkUI
+4ZNPPiktLc30ODQuiUwPAADslS1btrzwwgsffvhh6uYHH3zwwQcfdO7ceejQoW3bts3sbDQS
+rtgBQBbYunXr448/XlV1VT7++OPHHntsw4YNGZmKxkbYAUAWeOmllzZt2rTHQ+Xl5fPmzUvz
+PDROwg4AGruKioply5bVsOHjjz9et25d2uah0RJ2ANDYlZSUVFZW1rxnzZo16RmGxkzYAUBj
+V1FRUeuebdu2pWESGjlhBwCN3X777Vcve4iesAOAxq5Dhw6JRC3vUNalS5f0DENjJuwAoLFL
+JBJ9+/atYcOhhx7aqlWrtM1DoyXsACALHHfccdVdk9t///0LCwvTPA+NUwbCbtq0aYWFhe3a
+tSssLJw2bVoDnQIAMcnLyzv11FOPPfbYgoKCqsXUlbwzzzyzWbNmGZyNxiPdYTd+/PiioqKS
+kpIzzjhj7dq1RUVFEyZMqPdTACA+ubm5xx9//CWXXHLiiSeGEI488shLLrnkS1/6Un5+fqZH
+o7HISSaTaftmCxYsOOaYY0466aQnnngikUjs2LHj1FNPnTNnzj/+8Y/qnjpQh1NCCAUFBf37
+958/f36D/VUAIGPef//9OXPmfPGLXxwwYECmZ6FxSesVu0mTJoUQJk6cmHppTyKRuPnmm5PJ
+5OTJk+vxFACApimtV+w6dOjQvHnz5cuX77p44IEHJpPJ1atX19cpwRU7AKLmih3VqeVNcerR
+hg0bSkpKBg8evNt6t27dXnnllbKystatW9f5lLKysrPPPrtqw86dO+t7fACAxi59YVdWVhZC
+aN++/W7rqZVNmzZ9Nuz2/pTt27fPnTu3AaYGAMga6Qu71Gt2cnJy9ng0N3cPz/bb+1PatGmz
+6y9eBw4cuC+jAgBko/SFXceOHfPy8tavX7/b+rp16/Ly8jp16rQvpyQSieOOO67qZnUtCAAQ
+sfS9KjY3N7djx44rVqzYbX3lypWdO3fe4xW7OpwCANBkpbWNhg0btmzZsuLi4qqVxYsXL1++
+fMiQIfV4CgBA05TWsBs3blwI4aabbkrdTCaTqT8XFRWlVrZv315aWrphw4a9PwUAgJT0Pccu
+hDB06NDRo0fff//9q1atGjhw4Isvvjhv3rwxY8ZUfXTxvHnzRowYcfTRR7/55pt7eQoAACnp
+fprafffdN3HixPLy8jvuuGPHjh2TJ0++99576/0UAIAmKK2fPJE2PnkCgIj55Amq44WlAACR
 EHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAAkRB2AACREHYAAJEQdgAA
-kRB2AACREHYAAJEQdgAAkchKJpOZnqH65ebmtmzZ8rzzzsv0IAAA1en666+vV69eubuTMZo6
-dWoazzAAQJp8/vnn+0igOK/YFRUVvfvuu5meoopGjx796aefvvTSS40aNcr0LLXMhAkTpk+f
-fsMNN4wcOTLTs9Qyr7zyymWXXTZy5Mgbbrgh07PUPgMHDmzUqNGLL76Y6UFqn5/85CezZ8++
-++67+/fvn+lZaplHH330d7/73XnnnXfppZdmepZaZs2aNSeeeOJhhx320EMPZXqWKurfv392
-drkvpUukc5S0qVev3oABAzI9RRXl5uaGEI4++uimTZtmepZapnXr1iGEbt261d5/+pny2Wef
-hRC+8IUvOHVVk5OT49RVQbNmzUIIvXr1cvb219y5c0MI7dq1c+r214oVK0IIDRs2jPXUuXkC
-ACASwg4AIBJxPhVbq91+++3btm1r2LBhpgepfc4///yhQ4cee+yxmR6k9unfv//DDz/cuXPn
-TA9SKz300EP7ukON8l1xxRXnnntunz59Mj1I7XPCCSc8/PDDvXv3zvQgtU/Lli0ffvjh1MsA
-ohTnzRMAAHWQp2IBACIh7AAAIiHsAAAiIexqok2bNmV6BOoiDzyA2k7Y1TgzZszo1q3ba6+9
-lulBqFs88AAiIOxqlhkzZpx11lkbNmy48847Mz0LdYgHHmm2a9euTI8AcRJ2NUjql2uDBg2G
-DRs2f/78TI9Tm+Tn53/zm9/s1q1b+/btv/3tb7/++uuZnqg28cCrMg+8qtmxY0f//v0feeSR
-TA8CERJ2NUXpL9d//etf559//vvvv19cXJzpoWqHN998s1+/frNmzerTp0/btm0ffvjh4447
-7r/+67927tyZ6dFqAQ+8KvPAq7L69eu3aNHiO9/5jrY7EJ9//vn06dMfeeSR7du3Z3qWWqmw
-sPDTTz8tKSnJ9CDVLUkNMH369EQi0bhx45dffjmZTC5evDiEMG/evEzPVQuUlJT079+/VatW
-//nPf1JbnnnmmZ49e4YQhg0btnnz5syOV8N54FWZB94BmjBhQgghkUjMmDEj07PUSh9//HGv
-Xr1Sv8f79u27ZMmSTE9Um3z22Wdnn312/fr1QwjNmjW7/PLLY/r/rLDLvN1+uSaTyZKSkiZN
-mtx4442ZHaxWWLNmTQjhF7/4RdmN69atGzx4cAjhhBNOKC4uztRsNZwH3oHwwDtAF154YSpK
-tF0VlJSUDBkypEWLFlddddV3v/vdrKysTp06abtKKigoOPTQQ3Nycs4444xLL7001cdHHnnk
-ypUrMz1a9RB2GbZu3bqmTZuW/eWaMmLEiK985SuZmqoWSV1kuvLKK3fbvmPHjq997WshhJ/8
-5CcZGayG88A7QB54B2LBggUNGjTo3bv39OnTGzdurO321/z587Ozs994443Ulw899FAikdB2
-lXTWWWfVq1fvpZdeSn25c+fOAQMGhBCmTp2a2cGqi7DLvOeee263X67JZPKPf/xjdnb2mjVr
-MjJSLbJjx45DDjnk0EMPLSws3G3Xhg0bUh8u/vzzz2dkthrOA+9AeOAdiF/96le9e/devXp1
-MpmcPXu2ttsv27dvf+6557p27Vp248MPP6ztKmPbtm1ZWVnjx48v3XLttdeGEG677bZkMvnM
-M89kbrRqI+wyoDLP0SxZsiSE8Pvf/z4N89QuRUVFr7322vTp0xcsWJDacumll4YQfvWrX+25
-eO7cuVlZWaeddlp6Z6y59jx7u/HAK09RUdGrr746e/bsDRs2pLZ44FVeUVFR2S937dq1bt26
-0i+1XSV9+OGHqWtLIYRDDjlkx44dZfdqu8pYuHBhCOGPf/xj6suyVXf77bfXq1dvxYoVGR2w
-Ggi7dCssLDzyyCMr8++vfv36dezYcefOnWmYqrZ49dVXu3btWnrrz6mnnrp27dp169Z16NAh
-Kyvr/vvv3/OQ0aNH5+TkbN++Pf3T1jR7PXt7LvPA29Pzzz/fqVOn1Hlr3Lhx6kkcD7zKeO21
-14YOHZpIJOrXrz9mzJinn356r8u0XYUWLVrUsmXLBg0aDBw4sEGDBiGEq666arc12q5CW7Zs
-qV+//tlnn53831WXTCYffvjhEMI//vGPjA5YDYRdBgwePLgy//5KvVXsfffdl56par7nnnuu
-Xr167dq1u+GGGyZPnjxo0KAQwte//vVkMjlnzpyGDRvWr19/+vTpux31s5/9LITglez7OHu7
-8cDbzdy5c+vXr3/ooYfeeuutt9xyyy9/+cuSkpLULg+8fXvxxRdzc3ObNWv2ne98Z8yYMU2b
-Ng0hfOtb39q6deuei7Xdvl1yySWNGjV69913k8nkkiVLevfuHUL4wx/+sNuyVNvdeuutmZix
-Jtq+ffujjz561113LV++PLVl1KhR2dnZ3/3ud8tWXfL/hV15/+1Riwi7DKjkff6ff/55ixYt
-unbt+vnnn6dtthpr+/btHTt2bNWq1WeffZbasmvXrv79+4cQ3nrrrWQy+c9//rNRo0ZZWVm/
-//3vd+3aVXZNp06dMjZ3zVDh2SvLA283I0aMaNy48bJly/a61wOvPFu3bu3WrVv37t1Lf6Eu
-W7bsiCOOCCEMGjSo9BntsrTdXi1atOiyyy4755xzfvjDH5ZuXL16dep2zj3bbuHChekdsOZa
-vHhx3759U9famzZtOnPmzGQymZ+f36RJkxDC5ZdfXrqyuLj4q1/9arNmzSK4yi7sMqDy9/n/
-6le/2uv19jroiSeeCCHs9k4c999/fwhh2rRpqS/nz5/fpUuXEMIRRxxx1113PfbYY6NGjSq7
-oM6qzNkrywOvVFFRUf369cv+Ql2zZs2Pf/zjQYMGDRs27He/+11hYaEH3l794x//CCE8+OCD
-ZTe+8cYbqX/7HX/88du2bdvzqFTb/eY3v0nXmLXAb3/729Tvi7Iv+U/us+1IJpOffPJJy5Yt
-W7Ro8Zvf/ObXv/51s2bNcnNzn3jiiWQyOWPGjNzc3EaNGk2cOPHf//73E0888eUvfzmE8MAD
-D2R66mog7NJtv+7z37p1a/v27evVqxfN++tU2V133RVCuOOOO8pufOihh0IIf//730u3rFmz
-5kc/+lHqv8ZCCA0bNpw0aVLah61xKnn2SnnglUp9jMSFF16Y+vLNN99s06ZNCKFt27aJRCIV
-c2vXrvXA29PEiRP3vCS8a9euRCLRo0ePEMIPfvCDvR74ySefpGXA2uSKK65IPeoKCgrKbtd2
-+3DttdcmEonSR+CiRYvatWtX2nZvvPFGt27dSl9z3KxZs7/+9a8ZnbfaCLt029/7/O+5555r
-r702ffPVVK+99loIYfTo0WU33nzzzSGEPZ932Lx582OPPfboo4/u9eaAOmi/zl6KB16pHj16
-tG7durCwcMeOHV/84hc7d+782muvJZPJTZs2jR07NoRw5plnplZ64JX16KOPhhBuueWWshtT
-H0Y8d+7c1BNkpe8lRoVSbXfsscdu2rSp7PbStnv11VczNVtm7dix44Ybbij7xkOpJ69/9KMf
-DR48uOzK999/v2zbFRUVvfjiixMmTHjggQdSv5TjIOzSzX3+VZaXlxdCmDVrVumWE088sWPH
-jqWvZE8mk59++ulen9/B2auy6667LoTwy1/+8vnnnw8h/Pvf/y7dVVJSkno74o8//jhzA9ZQ
-69ata9myZePGjUvP2MaNGwcNGtS+fftt27bNnTs3dSNFZoes4Xa7OX0fbfff//3f6R2tBrnt
-tttCCN/85jdLt6SevG7evPnxxx+/2+Ld2i5Kwi7ztF0lrVix4qqrrioNkZ07dx5yyCHjxo0r
-XbB69erevXsPGzZstzfNIunsHYBNmzZ16dIlKyvrrLPO2vN+iHvvvTeE8Mgjj2Rkthplz1uA
-Z8yYkZWVlUgkzjjjjPHjx3fq1CkrK+uxxx5L7T3uuOO6dOmS7ilrg82bN1988cUdOnTIzs4+
-7rjjyr6Iory2q8uKi4vHjh37+OOPl92YOlE5OTmLFy/ebX30bSfsagRtVwWp/+Iv/YWa6pIQ
-gicQK8PZ2y+vvfbaIYccknoTu93yZerUqSGEV155JVOz1RDlvUPnrFmzevbsmXoZU48ePcpe
-Mz711FPbtGmT3jFrgdWrV3ft2jUrK2vw4MEnnnhiw4YNU5ejSu8j1nYpO3bsuO6668o+ybBo
-0aLvfe97pc/Jpk7UkUceueeJSrXd9ddfn75x00jY1RTabn+l3m4tPz8/qUv2n7O3v/75z3/W
-r18/hFD2l8HOnTv79+/fqlUrbw2T3Oc7dK5evXq31zBt3Lixbdu23/jGN9I1XU20Y8eOPW/D
-HD16dG5u7nPPPZf6csOGDWeccUYIYfDgwaX/UVHadnt+ol3d8ec//zmEMGzYsNK2++lPfxpC
-GDly5G5tt9cIjviFsMIuHQoLC3/961+PGDHi2GOPveWWW8p7z1L3+e9pH6fu9ttvDyEsWLBA
-l5TH2auyvZ66Wf9fe/caFVX1vwF8n2GGQWEENBR0BFTSlUga3sBbZKVoWQjYWqLm8lJKXqDU
-MKgQTTBTxCtq5i0NL1wUL4naksAlKdENDTAQAQFHzVRQYGA4/xd7/c6a/xkcxgNyhpnn88LF
-7LPF73zX4DzMOWfv8+ft7OwIIdOmTTt27NiBAwc8PT0JIbqrE5snQ1bozMzMvHPnTmFh4bhx
-4xiGOXfuXFtWaGyWL19OCFmxYgU3Qvf0015fjZo9eza90JMbCQsLw89sSEiIdrbTaDSzZs0y
-PNuZKgS75660tJTuCO7i4mJjY2NpaZmRkfG0ybjPX5v+1h0/fpwQMm/ePOSSJqF7gulp3c2b
-N6dNm0bPjtEzs/Hx8eJWazyaXaHz8OHDDMPQOTKZjNuv02w9ePBg2LBh2tnuxx9/JITs2LGD
-N7OmpqZ3796dO3c2871MdCHb6UKwe+58fX07duxIP1evrq7Ozs4Wu6J2Q3/r1Go1XVEMuaRJ
-6J5gzf7MPnz4MDU19fjx4/fv3xejQGNkyAqdNTU1O3bsCA4OjoiIoFtj4eImAAAAE2tJREFU
-AS/bFRQUEEJmzpypOzMiIoIQcuXKlbYu0eg9U7Yzh5PXCHbP119//UUIiYqK0j30+++/P3r0
-qO1Lai8MaV1iYiJySZPQPcHwM2uIuro63h5rz7pCJ3B42a5///5WVla6e/2tWrWKuy4WeAzM
-dmby3x2C3fNFT3ilpKTwxlUqlb29fWhoqChVtQsGtu7ChQttXVl7gO4Jhp/ZZtXV1b3zzjtK
-pbKwsJAbxAqdwmg0mpSUlJiYGJlMRrPdpUuXZDKZi4tLXl4eN40uju3k5IRTsU9jSLYzEwh2
-z1d2djYhZPny5bqH6M10bV9Se4HWtQS6Jxha16yoqCh6Ep+X7XiQ7Zp148aN4cOHE0IcHBw6
-d+5Mu7pixYr4+HiJRGJjYxMdHf3nn3+mp6e/+uqrhJCTJ0+KXbIRqampqays1Gg03IiebGdW
-gRjB7rnglgtvbGxUKpX29va6C9PPmTOHYZiampq2Ls7o0e6hdQLghScYWme4/Px8CwsLurAf
-sp1gjY2NI0eOlMvldDnJhoaG1NTUHj160Gx39uxZBwcH8j8KhWL37t1il2wsVCpVUFAQXX7I
-1tb2448/5q6RaDLbmckZWA6CXWtqcrlwumHiwIEDVSoVN7O2trZv376DBg0Sr1ijo9s9tM5A
-eOEJhtYJM3PmTLlcHhwcjGwnGL0B9rPPPtMeVKlUHh4eNNtVV1enpKSEh4fv3LmTd0WjObt3
-717Pnj0tLCwCAgIWLVpE98n18PAoLy+nE3jZTnvXRDOBYNdq9CwXvnTpUkJIjx49Dh48eP/+
-/atXr7755psMw5w+fVrsqo3F07o3d+5ctE4/vPAEQ+sEKywslEql8+fPj46ONjDbYYVOnk2b
-NjV5NWd+fr6lpSVvfTvgTJ06VSaT/fzzz/ShWq0ePHgwIWTXrl3cHC7bmecGiQh2rUb/cuHb
-t2+3srLiPlfv2LGj9vZ/oKd7W7duRev0wAtPMLSuJebOnSuTyYqLiw3JdlihU9eBAwcIITEx
-MbqHJkyYQM8zItvxPHnyhGGYjz76iBuJjIwkhGzYsIFl2bNnz3LjISEh5nYGloNg1zoMWS68
-rKxs69at8+bNW7NmjZ7/Ac1Qs91D654GLzzB0LoWunnzpqWl5Zw5c1iWNSTbAc/9+/elUqmr
-q+uDBw94h2bMmDF9+nQzvDisWdeuXSOEcEtba6e6bdu2yWSyW7duiVqgUUCwax1YLrwl0D3B
-0DrB0DpD1NXVHT169Gnns4KDg6VSKQ1zyHbNqqmpSU5O3rlzZ1lZGR356quvCCETJkzQ3mu4
-qqpKqVR+8MEHZnhxWLOqqqrkcnlQUBD7/1Mdy7JHjhwhhJw6dUrUAo0Cgl3rwHLhLYHuCYbW
-CYbWNYuuV0cI6d279549e3Tj3a1bt+Ry+fvvv08fItvpkZ+f7+7uTk/rd+rU6cSJEyzLajSa
-t99+mxDi7u6enJx89+7dnJwcurLJ+fPnxS7ZSE2YMEEikUyfPl071bH/C3ZpaWki1mYkEOxa
-DZYLbwl0TzC0TjC0Tr+0tDS6tatUKiWEuLm57du3j/dB5uLFiy0sLPLz8+lDZLsmlZSUdOnS
-xd7efuXKlVFRUba2tpaWlqmpqSzLNjQ0hIeHc1voEkLkcvnmzZvFLtlYVFdXb968edasWZs2
-baK/Wly/fl2hUPCuo2hoaBg9erStrS1WI2IR7Frozp07v/32W1VVFcuyWC78mWi3jkX3ngVa
-Jxha96y+++47hmE6d+68bNkyNzc3QsiLL774/fffc82prKzs0KEDPTVG0WwXGxsrUsnGKDIy
-UiqVcr9C5OXlOTo6ctmOZdnc3NzIyMgpU6YsXbr077//Fq9S41JYWNi/f38u8h46dIiOJyYm
-WlpaWltbf/PNN5cuXUpNTR0yZAghJCEhQdyCjQSCnUAVFRV+fn701WZlZRUQEHDr1i0sF26I
-JlvHsiy61yy0TjC0znB1dXWBgYFc5qDZzsHB4ffff9+zZ0/v3r0JIf369Tt48CBd9H/JkiUS
-ieTq1avcd8jMzBSndOOTl5cXEhKyYMGCMWPGaI///fffvGwHPI8fP3Z3d7e1tU1ISCgtLeX9
-SF65cqVXr15c5rO1td2/f79YpRobBDshcnNzu3btKpFIAgICQkNDPT09CSEODg4//fQTlgvX
-T0/rWJZF9/RA6wRD6wzHXVe3ePFibpDLdrm5ufX19bt27XJ1dSWEvPTSS4cOHbp9+7aNjc2U
-KVNELNtorV69mhBiZ2c3cuRI3iFkO/02bNjAuxmitrb2wIEDERER6enpLMvW19enp6d//fXX
-CQkJlZWV4lVqdBDshPD19WUY5syZM9zIwYMHra2tbWxsCgoKsFy4Hvpbx7Isuvc0aJ1gaJ2B
-uFQXHBzMuyVTO9uxLKtWq3fu3Ons7Ewv/Pf09GQY5o8//hCpcKMWFhZGCNG+EpGDbKfHu+++
-26lTJ+7hoUOHlEol/e2LYRicddUDwe7Z5OXlXbx4sXv37hMmTOAdOnXqFMMwr7zyiiiFGT+0
-TjC0TjC0znB6Uh3Fy3b0r8THx/fs2ZO+3X777bdtW3K7QbOdh4fHw4cPeYdotlu1apUohRmz
-efPmEUJWr16dmJg4atQoQoiLi8vGjRtTUlK6du3q4uIidoHGC8Hu2YwaNcrGxsbW1nbGjBm6
-R4OCgggh+LW1SWidYGidYGidgbhUN2TIED3Lp+lmO5Zla2trt2zZsmbNmjaptH24ceMG/TCY
-Q7Pd8OHDdbPd3bt327C0dqO4uNjW1pa7LvbTTz+trq6mh2bNmiWVSsUtz5gh2D2bsrKyPn36
-EEIcHR11b5pLSEgghOBO9SahdYKhdYKhdYbgUp1MJiPNbWPVZLYDzu3bt8ePH0/jyFtvvaUd
-4/RkO+BoZ+KioqLPP/98/fr13JLOLMs+efLExcXFx8dHpALbAQS7Z8a9VYSHh/MO7d69mxBy
-5MgRUQozfmidYGidYGidftpnYH/99Vd7e3tkO8EqKiqUSqVcLp81axa9C5sX45Dt9NCTiVmW
-ffToEf3Tz89PIpFwWzyDLgQ7IehbBcMw0dHR3GkLtVo9cODATp06VVRUiFueMUPrBEPrBEPr
-nkb3urqcnJxnynYqlaqtijV2jY2Nb7zxhrW19aVLl+iIr6+vnmxXW1srUqXGSH8mjomJsbW1
-9fPzc3R0ZBgGqyTqh2AnEPcxwLBhw+Li4jZt2jRgwACGYb777juxSzN2aJ1gaJ1gaF2T7ty5
-069fP97dEoZnO/0TzE1WVhYhJC4ujj5sbGwcMWKEi4tLk9kuMjJSnCqNUrOZ+Ntvv6WvSTc3
-t+PHj4tabDuAYCcc91bBMIyjo6OXlxc+HDYQWicYWicYWtek+/fv694tYWC2A21btmwhhJw9
-e5Y+XL9+vZWVVUFBAd2rfvjw4RUVFUlJSXruTTFbhmTixsZGfDxsIAS7FqFvFRKJxJxXNBUG
-rRMMrRMMrTMcsp2BioqK6BcXLlwghKxcuZJl2czMTKlUGh8fTw8NGzaMWwEb23LoQiZuXQh2
-LYW3CsHQOsHQOsHQOsMh2zWroaHBzc0tIiKCPty9e3d9fX1dXV2fPn3Gjx/PTZs4ceL48eMH
-Dx6MW7CbhEzcuhDsWgHeKgRD6wRD6wRD6wyHbKffsWPHGIbR3vaKZdmUlBRCSFpaGn1YVVVl
-Z2d38eJFMQpsN5CJWxGCXevg3ip++OEHsWtpZ9A6wdA6wdA6wyHbNSkvL2/p0qX79+/39PTk
-Hdq2bRshhO5Jr9Fopk+f/sILL3CL6wJVWlqakZHBW5wZmbhVSAi0BqVSmZ6ePnr06KFDh4pd
-SzuD1gmG1gmG1hnO09Pz/Pnz9vb2LMuKXYsROXTo0Lp16zZv3tyhQwfeoXHjxsnl8vnz58+b
-N8/b2/vAgQNbt261trYWpU7RqdXqc+fOaY9UVFRMmjTJ2dl5zJgxjo6Ovr6+JSUl9FBlZSUh
-RKVSEUIaGxuDg4OlUumgQYPavuz2TexkCQAAxs6cV/t7mpCQEEKIRCLJz8/nHTp58mTXrl0J
-IV26dKEf3ZmtBQsWaF/2cO/ePWdnZ4Zh/P39Q0NDPT09CSH29vbnzp1jWbawsFAul3fs2PHD
-Dz+kV9cdPnxY1PLbJQQ7AAAAIWi2c3d3r6qq4h1qaGgoLi7WaDSiFGY8eJe0rlixgmGYM2fO
-cBMOHjxobW1tZ2d348YNFpm4NTAsPl0HAAAQJDQ0dOPGjaNHjz59+rSNjY3Y5RijW7du+fj4
-FBcX79q1Kysrq7Ky8sSJE9oTTp06NWnSpJEjR2ZmZhJCNBpNWVmZs7OzRIKrxYRAsAMAABAO
-2a5ZXLZTKpWvvfba3r17eROCgoISEhIKCwvpKuLQEojDAAAAwsXFxYWEhGRmZk6cOLG6ulrs
-cowRvV2pV69epaWlZ8+e1Wg0vAlvv/02ISQjI0OM6kwNgh0AAECLaGc7tVotdjnGiGa7Pn36
-VFZWfvnll7yjNTU1hBB6dR20kFTsAgAAANq9uLg4QoidnZ2lpaXYtRgpmu18fHxiYmJsbGyW
-L1/OMAwhpL6+ftOmTXZ2dtr7TIBguMYOAAAA2gi93q6oqMjLyysoKMjCwmL79u25ubl79+6d
-OXOm2NWZAgQ7AAAAaDtctqMP+/Tps23btnHjxolblclAsAMAAIA2RbPdzZs3U1JSJk2aJHY5
-JgU3TwAAAECbotfbubq6Xrt2TexaTA0+sQMAAAARPHr0qFOnTmJXYWoQ7AAAAABMBE7FAgAA
-AJgIBDsAAAAAE4FgBwAAAGAiEOwAAAAATASCHQAAAICJQLADAAAAMBEIdgAAAAAmAsEOAMxR
-VFQUwzAMw2RmZjY5ITw8nE64fPlyS/6h0aNH9+zZ08DJM2bMYBimrq6uJf8iAJgzBDsAMGuJ
-iYlNjiclJbVxJQAALYdgBwDmS6FQJCUl6W7Ac/Xq1evXr2OzIwBodxDsAMB8TZo0qby8PCsr
-izeelJTEMMzEiRNFqQoAQDAEOwAwX35+fhYWFkePHuWNJyUleXl5KZVK3vijR48WL148cOBA
-hUIxZMiQsLCwmpoa7QnXr18PDAzs2bOnUql87733bt68yfsOGo0mOjra29tboVD06tVr0aJF
-lZWVrf20AMB8IdgBgPnq2rWrj48P72zsP//8k5ubGxgYyJusUqk8PT03b96sUCimTp3Ksuza
-tWuHDRtWXV1NJ2RlZQ0dOjQ5OdnNzW3s2LG//PKLt7d3WVkZ9x3UavXYsWMjIiIaGhqCgoJc
-XV23bNni5eVVWlraBk8WAMwBgh0AmLXAwMCysrIrV65wI/R2Cn9/f97MlStXFhUVxcXFXbx4
-cefOnTk5OWFhYVevXt2wYQOdEBoaWl1dnZycfOHChf3791+7ds3Nza2kpIT7DvHx8RkZGatW
-rcrOzt6xY8eFCxf27dtXWlr6ySefPP8nCgBmAcEOAMza5MmTJRKJ9tnYpKSkwYMHu7q6ak+r
-r6/ftWvXgAEDFi9ezA1GRUU5Ojpu376dEJKTk3PlypWAgAA/Pz96VKFQxMbGan+T2NhYNze3
-8PBwbuT999/39vY+ceLEkydPnsOTAwCzIxW7AAAAMXXr1m3MmDGJiYnr1q0jhJSUlOTk5MTE
-xPCmlZSUqNVqHx8fhmG4QblcPmLEiOTk5MePHxcUFBBCfH19tf/W0KFDHRwc6NePHz8uLS31
-9vZOSEjQnmNlZaVWq4uKijw8PJ7HEwQAs4JgBwDmLjAwcOHChdnZ2UOHDqXL1wUEBPDmlJeX
-E0IcHR15405OTvQovQeie/fuvAlKpfLu3buEEHpONisrS/cmXEIId6EeAEBL4FQsAJg7f39/
-iURCL61LSkry8PB48cUXeXNoYlOpVLxxOuLk5ES3l9C9xfW///6jX3Tr1o0QsmDBArYp3t7e
-rf/EAMD8INgBgLlzcnIaMWLE0aNH6Zp2uvfDEkJcXV1lMtnPP/+sPahWq7OyshwdHRUKRd++
-fQkhaWlp2hOKi4u5O167dOnSpUsX3Q3K1q1bFxkZ2ZrPBwDMGIIdAACZMmVKcXHxF198wbKs
-7nlYQohMJps9e/Zff/21detWbnDlypXl5eXBwcGEkEGDBnl5eR09ejQ1NZUera2tXbRoUWNj
-Izd//vz5v/76a3R0NDeyf//+ZcuWFRYWPq8nBgBmBtfYAQAQf3//0NDQPXv29OvXz93dvck5
-kZGRaWlpCxcuTExM7N+/f05OzuXLl19++eUlS5bQCbGxsb6+vpMnT3799dednZ3T09NVKtWo
-UaO4ZYrDwsKOHz8eERGRnJw8fPjw8vLykydP9ujRY+3atW3zNAHA5OETOwAAolQqvby8SFO3
-TXCcnJz++OOPBQsW/Pvvv/v27auvr1++fPnly5etra3pBG9v7+zsbH9//4KCglOnTg0cODAj
-I2PAgAHcd1AoFNnZ2WFhYSzL7t2799q1ax9++GF2dnaPHj2e9xMEADPB6O5+DQAAAADtET6x
-AwAAADARCHYAAAAAJgLBDgAAAMBEINgBAAAAmAgEOwAAAAATgWAHAAAAYCIQ7AAAAABMBIId
-AAAAgIlAsAMAAAAwEQh2AAAAACYCwQ4AAADARCDYAQAAAJgIBDsAAAAAE4FgBwAAAGAi/g+S
-eE4lYBAYywAAAABJRU5ErkJggg=="
+kRB2AACREHYAAJEQdgAAkRB2AACRSGR6AABgDx577LGdO3fu8VBFRUUIYdGiRe+99151p59y
+yinNmzdvqOForIQdADRGpaWlO3bsqGHD5s2bN2/eXN3RysrKBhiKxk7YAUBjdOmll2Z6BLKP
+59gBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEA
+RELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgB
+AERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELY
+AQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAERC2AEARELYAQBEQtgBAEQi
+J5lMZnqG+terV6/33nsv01MAANSzzZs3t2jRorqjiXSOkjavvfbaeeedl+kp6ujFF18sLy8f
+NmxYIhHnP52G8/bbb69YsaJv376dO3fO9CxZpqSkZMGCBZ07d+7bt2+mZ8k+c+fOTSQSw4YN
+y/Qg2WfhwoVr1649/vjj27Vrl+lZsszKlSuXLFlyyCGH9OrVK9OzZJmKiooXXnihVatWAwcO
+zPQsdZSXl1fT4SSNTLdu3UIIGzduzPQg2aeoqCiE8MADD2R6kOzzxz/+MYRw4YUXZnqQrJST
+k9O2bdtMT5GVTj/99BDCvHnzMj1I9rnzzjtDCNdee22mB8k+y5cvDyH07ds304M0FM+xAwCI
+hLADAIiEZ3E1Ot26dUskErm5mvtzO+CAA3r27NmqVatMD5J9WrRo0bNnz44dO2Z6kKzkUVdn
+nTp16tmzZ/PmzTM9SPZp06ZNz549v/CFL2R6kOyTSCR69uzZtWvXTA/SUOJ8VSwAQBPkshAA
+QCSEHQBAJIQdAEAkhF1jtHHjxkyPQFPkgQeQ7YRdozNr1qwePXq8/PLLmR6EpsUDDyACwq5x
+mTVr1gUXXLB+/fq77ror07PQhHjgkWY7d+7M9AgQJ2HXiKR+uDZv3nz48OELFy7M9DjZpLi4
++Otf/3qPHj26dOnyjW9845VXXsn0RNnEA6/OPPDqpqKi4phjjpk9e3amB4EICbvGouqH65//
+/OcxY8a89dZbO3bsyPRQ2eG1117r37//3Llz+/Tp06lTp0ceeWTQoEH/9m//tm3btkyPlgU8
+8OrMA6/OmjVrtv/++59//vnabl9s3rx55syZs2fP3rp1a6ZnyUrl5eUff/xxZWVlpgepb5n+
+sFqSyWRy5syZiUSiVatWL7zwQjKZfPvtt0MICxYsyPRcWaCysvKYY4454IADPvjgg9TKU089
+ddhhh4UQhg8fvmnTpsyO18h54NWZB94+mjhxYgghkUjMmjUr07Nkpffff793796pn+NHHXXU
+0qVLMz1RNvnkk08uvPDCZs2ahRDatm179dVXx/T/WWGXebv9cE0mk5WVla1bt7755pszO1hW
+WLNmTQjhRz/60a6LpaWlQ4YMCSF89atf3bFjR6Zma+Q88PaFB94+Gjt2bCpKtF0dVFZWDh06
+dP/99//BD35w8cUX5+TkdO3aVdvtpZKSkoMPPjgvL++cc86ZMGFCqo/79eu3cuXKTI9WP4Rd
+hpWWlrZp02bXH64pI0eO/NKXvpSpqbJI6iLTddddt9t6RUXFl7/85RDCv//7v2dksEbOA28f
+eeDti0WLFjVv3vyII46YOXNmq1attN3ntXDhwtzc3FdffTV18+GHH04kEtpuL11wwQX5+fnP
+P/986ua2bduOO+64EMK9996b2cHqi7DLvKeffnq3H67JZPKXv/xlbm7umjVrMjJSFqmoqGjR
+osXBBx9cXl6+26H169f36dMnhPDMM89kZLZGzgNvX3jg7Ysf//jHRxxxxOrVq5PJ5Lx587Td
+57J169ann376kEMO2XXxkUce0XZ7Y8uWLTk5OUVFRVUrP/nJT0IIU6ZMSSaTTz31VOZGqzfC
+rpFaunRpCOGWW27J9CBZYMKECSGEH//4x589NH/+/JycnLPOOiv9U2UpD7y954FXZzt37iwt
+La26qe320rvvvpu6thRCaNGiRUVFxa5Htd3eWLx4cQjhl7/8ZermrlX3m9/8Jj8/f8WKFRkd
+sB4IuwzYyyff9O/f/6CDDtq2bVtDz5Ndtm/f/vLLL8+cOXPRokWpldLS0gMPPDAnJ+fBBx/8
+7P7TTjstLy9v69at6R2zkfrsvfdZHnh7tH379pdeemnevHnr169PrXjg7b3t27fXvEHb1WrJ
+kiXt27dv3rz5CSec0Lx58xDCD37wg932aLvqLFmy5O23304mk2VlZc2aNbvwwguT/7fqksnk
+I488EkL44x//mMlB64OwS7fy8vJ+/frtzb+8Um8V+/vf/z4NU2WLl1566ZBDDql6TfeZZ565
+du3aZDL54osv7rfffs2aNZs5c+Zup1xzzTUhBM9kT1Z/7+3GA++znnnmma5du6but1atWlU9
+O8cDr1Yvv/zysGHDEolEs2bNRo0a9de//rW6ndquZldccUXLli3/8Y9/JJPJpUuXHnHEESGE
+X/ziF7ttS7Xd7bffnokZG6k1a9Z07tz5W9/6VurmySefnJube/HFF+9adcn/DbsaHqLZQthl
+wJAhQ/bmX16bN2/ef//9DznkkM2bN6dnsEbu6aefzs/P79y5889+9rOpU6cOHDgwhPCVr3wl
+dfRPf/pTy5Ytc3Jybrnllp07d6YWd+7cecwxx3Tt2jVzUzcWNd97u/LA2838+fObNWt28MEH
+33777bfddtsNN9xQWVlZddQDrwbPPfdcQUFB27Ztzz///FGjRrVp0yaEcN5553366ad73K/t
+9mjJkiVXXnnlRRdddNlll1Utrl69OvVyzs+23eLFi9M7YGO3c+fOI488Mj8/f/ny5clksri4
+uHXr1iGEq6++umrPjh07/uVf/qVt27YRXGUXdhmw92/g9OMf/3iP19uboK1btx500EEHHHDA
+J598klpJ/ewMIbz++uuplYULF3bv3j2E0Ldv37vvvvvRRx89+eSTQwjTp0/P3OCNwt7ce7vy
+wNvVyJEjW7Vq9dFHH1W3wQNvjz799NMePXr07Nkz9dM0mUx+9NFHffv2DSEMHDiw6jfau0m1
+3U9/+tM0TtrY/cd//EfqR8auT/lP1th27CZ1Ne673/1u6uasWbMKCgpatmw5efLkv//9748/
+/vjxxx8fQpgxY0Zm56wXwi4D9v4NnD799NMuXbrk5+dH8/46dfb444+HEHZ7i7UHH3xwtx+f
+a9as+c53vpP6r7EQwn777XfHHXekfdhGZy/vvSoeeFW2b9/erFmzXa+UrFmz5qqrrho4cODw
+4cN//vOfp14V64H3WX/84x9DCA899NCui6+++mrqLho8ePCWLVv2eOKHH36YlgGzybXXXhtC
+6NSpU0lJya7r2m4vVVZW9uvXr3Xr1lX/RfHqq6/26NGj6qkpbdu2/d3vfpfZIeuLsEu3z/sG
+Tvfdd99PfvKTdE3XeN19990hhDvvvHPXxYcffjiE8MADD+y2edOmTY8++ugf/vCHPT6HrAn6
+XPdeigdeSurzwcaOHZu6+dprr3Xs2DH1IzaRSKSu0lU9zDzwdjV58uTPXhLeuXNnIpHo1atX
+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"
 width=420
 height=420
 >
@@ -15836,7 +15839,7 @@ We choose the model <strong><em>poc60</em></strong>, which is a good compromise 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Extract the training data columns belonging to poc60, as well as the odorant columns and the response label </span>
@@ -15876,7 +15879,7 @@ We choose the model <strong><em>poc60</em></strong>, which is a good compromise 
     <span class="c1"># Model training using the same parameter tuning procedure as above</span>
     <span class="n">grid</span> <span class="o">&lt;-</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">.mtry</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="nf">ncol</span><span class="p">(</span><span class="n">trainingProc</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">trainingProc</span><span class="p">)</span><span class="m">-1</span><span class="p">,</span> <span class="n">length.out</span><span class="o">=</span> <span class="m">5</span><span class="p">))</span>
     <span class="n">mod_final</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trainingProc</span><span class="p">,</span> <span class="n">Label</span> <span class="o">~</span> <span class="n">.</span> <span class="p">,</span>
-                       <span class="n">method</span><span class="o">=</span><span class="s">&quot;rf&quot;</span><span class="p">,</span> <span class="n">ntree</span> <span class="o">=</span> <span class="m">2001</span><span class="p">,</span>
+                       <span class="n">method</span><span class="o">=</span><span class="s">&quot;rf&quot;</span><span class="p">,</span> <span class="n">ntree</span> <span class="o">=</span> <span class="m">1001</span><span class="p">,</span>
                        <span class="n">metric</span><span class="o">=</span><span class="s">&quot;Precision&quot;</span><span class="p">,</span>
                        <span class="n">tuneGrid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
                        <span class="n">trControl</span><span class="o">=</span><span class="n">control</span><span class="p">)</span>
@@ -15912,7 +15915,7 @@ We choose the model <strong><em>poc60</em></strong>, which is a good compromise 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Pairs with response probability &gt; 0.5</span>
@@ -15944,69 +15947,60 @@ We choose the model <strong><em>poc60</em></strong>, which is a good compromise 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Predicted responsive pairs: 
-               Replicate1 Replicate2 Replicate3 Mean   SD
-Olfr885_7410         0.93       0.90       0.91 0.91 0.02
-Olfr885_323          0.89       0.87       0.88 0.88 0.01
-Olfr205_7410         0.87       0.84       0.84 0.85 0.02
-hOR8B2_439570        0.86       0.85       0.82 0.84 0.02
-Olfr194_7410         0.83       0.84       0.84 0.84 0.00
-Olfr913_7410         0.84       0.81       0.82 0.82 0.01
-Olfr1057_7410        0.81       0.81       0.80 0.81 0.01
-Olfr251_7410         0.81       0.80       0.79 0.80 0.01
-Olfr160_7410         0.80       0.80       0.80 0.80 0.00
-Olfr1057_323         0.81       0.79       0.79 0.80 0.01
-Olfr44_7410          0.78       0.79       0.80 0.79 0.01
-Olfr199_7410         0.79       0.79       0.78 0.79 0.01
-Olfr913_323          0.80       0.77       0.78 0.78 0.02
-hOR1E3_7410          0.78       0.76       0.78 0.77 0.01
-Olfr251_323          0.78       0.77       0.77 0.77 0.00
-Olfr1057_68110       0.77       0.79       0.75 0.77 0.02
-Olfr747_7410         0.75       0.75       0.74 0.75 0.01
-Olfr205_323          0.78       0.75       0.73 0.75 0.02
-Olfr747_323          0.76       0.76       0.75 0.75 0.01
-Olfr194_323          0.74       0.75       0.73 0.74 0.01
-Olfr885_68110        0.74       0.74       0.73 0.74 0.01
-Olfr147_7410         0.74       0.72       0.71 0.72 0.02
-Olfr199_323          0.70       0.72       0.72 0.72 0.01
-hOR8B2_7410          0.70       0.70       0.71 0.70 0.01
-hOR1E3_323           0.70       0.69       0.72 0.70 0.02
-Olfr44_323           0.68       0.69       0.70 0.69 0.01
-hOR8B2_323           0.68       0.67       0.68 0.68 0.00
-Olfr147_323          0.69       0.67       0.67 0.68 0.01
-Olfr908_7410         0.69       0.67       0.67 0.67 0.01
-Olfr160_323          0.67       0.66       0.68 0.67 0.01
-Olfr908_323          0.67       0.65       0.66 0.66 0.01
-Olfr251_68110        0.64       0.63       0.62 0.63 0.01
-Olfr893_7410         0.66       0.64       0.60 0.63 0.03
-Olfr893_323          0.66       0.62       0.60 0.63 0.03
-Olfr1487_7410        0.59       0.65       0.63 0.62 0.03
-Olfr147_439570       0.63       0.61       0.60 0.61 0.02
-hOR8B2_68110         0.61       0.61       0.61 0.61 0.00
-Olfr944_7410         0.59       0.60       0.60 0.60 0.01
-Olfr141_7410         0.56       0.59       0.59 0.58 0.02
-Olfr147_68110        0.60       0.56       0.57 0.58 0.02
-hOR1E3_439570        0.55       0.53       0.59 0.56 0.03
-Olfr885_439570       0.55       0.55       0.57 0.56 0.01
-Olfr944_323          0.55       0.56       0.57 0.56 0.01
-Olfr44_68110         0.57       0.56       0.55 0.56 0.01
-Olfr160_68110        0.57       0.54       0.56 0.56 0.02
-Olfr194_439570       0.53       0.56       0.57 0.55 0.02
-Olfr205_439570       0.53       0.54       0.56 0.54 0.01
-Olfr1471_7410        0.52       0.58       0.53 0.54 0.03
-Olfr1487_323         0.51       0.56       0.56 0.54 0.03
-Olfr141_323          0.53       0.54       0.56 0.54 0.01
-Olfr913_68110        0.55       0.53       0.54 0.54 0.01
-Olfr194_68110        0.54       0.54       0.53 0.54 0.01
-Olfr987_439570       0.52       0.51       0.54 0.53 0.02
-Olfr988_439570       0.52       0.51       0.55 0.53 0.02
-Olfr951_7410         0.52       0.52       0.55 0.53 0.01
-Olfr205_68110        0.54       0.53       0.52 0.53 0.01
-Olfr338_7410         0.54       0.51       0.50 0.52 0.02
-hOR1E3_68110         0.54       0.51       0.51 0.52 0.02
-Olfr199_439570       0.49       0.51       0.54 0.51 0.02
+               Prediction1 Prediction2 Prediction3 Mean   SD
+Olfr885_7410          0.92        0.93        0.94 0.93 0.01
+Olfr885_323           0.82        0.84        0.85 0.84 0.01
+Olfr194_7410          0.84        0.83        0.82 0.83 0.01
+Olfr205_7410          0.84        0.83        0.83 0.83 0.00
+hOR8B2_439570         0.83        0.82        0.81 0.82 0.01
+Olfr160_7410          0.78        0.77        0.82 0.79 0.03
+Olfr199_7410          0.76        0.81        0.79 0.79 0.03
+Olfr1057_68110        0.78        0.80        0.79 0.79 0.01
+Olfr885_68110         0.77        0.80        0.79 0.78 0.02
+hOR1E3_7410           0.78        0.76        0.77 0.77 0.01
+Olfr1057_7410         0.77        0.77        0.76 0.77 0.00
+Olfr147_7410          0.72        0.74        0.75 0.74 0.02
+Olfr251_7410          0.70        0.74        0.75 0.73 0.03
+Olfr1057_323          0.74        0.73        0.72 0.73 0.01
+Olfr747_7410          0.74        0.73        0.70 0.72 0.02
+Olfr747_323           0.73        0.71        0.73 0.72 0.01
+hOR8B2_7410           0.69        0.68        0.68 0.68 0.01
+Olfr913_7410          0.68        0.70        0.66 0.68 0.02
+Olfr147_439570        0.66        0.66        0.66 0.66 0.00
+Olfr251_68110         0.62        0.67        0.65 0.65 0.02
+Olfr147_323           0.62        0.66        0.65 0.64 0.02
+hOR8B2_323            0.64        0.62        0.62 0.63 0.01
+Olfr160_68110         0.58        0.62        0.64 0.62 0.03
+hOR1E3_439570         0.60        0.61        0.62 0.61 0.01
+Olfr194_439570        0.59        0.61        0.62 0.61 0.02
+Olfr205_439570        0.58        0.62        0.62 0.61 0.02
+Olfr1487_7410         0.60        0.62        0.60 0.61 0.01
+hOR1E3_323            0.60        0.62        0.61 0.61 0.01
+Olfr913_323           0.58        0.62        0.61 0.60 0.02
+Olfr199_323           0.57        0.65        0.60 0.60 0.04
+Olfr147_68110         0.57        0.61        0.61 0.60 0.02
+Olfr194_323           0.57        0.61        0.60 0.59 0.02
+Olfr205_323           0.56        0.62        0.60 0.59 0.03
+hOR8B2_68110          0.59        0.59        0.59 0.59 0.00
+Olfr251_323           0.55        0.60        0.60 0.58 0.03
+Olfr199_439570        0.54        0.60        0.58 0.57 0.03
+Olfr194_68110         0.56        0.56        0.58 0.57 0.01
+Olfr885_439570        0.54        0.57        0.55 0.55 0.02
+Olfr908_7410          0.56        0.55        0.53 0.55 0.01
+Olfr205_68110         0.54        0.56        0.55 0.55 0.01
+Olfr988_439570        0.54        0.53        0.53 0.54 0.01
+Olfr141_7410          0.51        0.54        0.55 0.54 0.02
+Olfr893_7410          0.54        0.55        0.53 0.54 0.01
+hOR1E3_68110          0.55        0.52        0.56 0.54 0.02
+Olfr987_439570        0.54        0.53        0.53 0.53 0.01
+Olfr160_439570        0.51        0.53        0.55 0.53 0.02
+Olfr1471_7410         0.52        0.53        0.53 0.53 0.01
+Olfr338_7410          0.53        0.52        0.52 0.52 0.00
+Olfr160_323           0.50        0.51        0.54 0.52 0.02
+Olfr199_68110         0.49        0.54        0.52 0.52 0.03
 
 Predicted responsive ORs: 
- hOR1E3 hOR8B2 Olfr1057 Olfr141 Olfr147 Olfr1471 Olfr1487 Olfr160 Olfr194 Olfr199 Olfr205 Olfr251 Olfr338 Olfr44 Olfr747 Olfr885 Olfr893 Olfr908 Olfr913 Olfr944 Olfr951 Olfr987 Olfr988</pre>
+ hOR1E3 hOR8B2 Olfr1057 Olfr141 Olfr147 Olfr1471 Olfr1487 Olfr160 Olfr194 Olfr199 Olfr205 Olfr251 Olfr338 Olfr747 Olfr885 Olfr893 Olfr908 Olfr913 Olfr987 Olfr988</pre>
 </div>
 </div>
 
@@ -16028,11 +16022,10 @@ The test set contained:</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">subset</span> <span class="o">&lt;-</span> <span class="s">&quot;poc60&quot;</span>
-<span class="c1"># Read the in vitro response data</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Read the in vitro response data</span>
 <span class="n">newPairs</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Response_to_odorants/Data/TestSet_OR-odorant_pairs/TestSet_&quot;</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="s">&quot;.csv&quot;</span><span class="p">),</span>
                      <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 
@@ -16055,7 +16048,7 @@ The test set contained:</p>
 <span class="nf">head</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 <span class="c1"># Extract prediction on the pairs tested in vitro</span>
 <span class="n">testSet</span> <span class="o">&lt;-</span> <span class="n">prediction</span><span class="p">[</span><span class="n">in_vitro</span><span class="p">[,</span> <span class="s">&quot;Pairs&quot;</span><span class="p">],</span> <span class="m">4</span><span class="o">:</span><span class="m">5</span><span class="p">]</span>
-<span class="n">testSet</span><span class="o">$</span><span class="n">Predicted</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">testSet</span><span class="o">$</span><span class="n">Mean</span> <span class="o">&gt;</span> <span class="m">0.5</span> <span class="p">,</span> <span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">),</span>
+<span class="n">testSet</span><span class="o">$</span><span class="n">Predicted</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">testSet</span><span class="o">$</span><span class="n">Mean</span> <span class="o">&gt;</span> <span class="m">0.5</span> <span class="p">,</span> <span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">),</span>
                            <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">))</span>
 <span class="n">testSet</span><span class="o">$</span><span class="n">in_vitro</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">in_vitro</span><span class="p">[,</span> <span class="s">&quot;Label&quot;</span><span class="p">],</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">))</span>
 
@@ -16068,6 +16061,14 @@ The test set contained:</p>
 <span class="nf">for </span><span class="p">(</span><span class="n">cid</span> <span class="n">in</span> <span class="n">testCIDs</span><span class="p">){</span>
     <span class="n">test</span> <span class="o">&lt;-</span> <span class="n">testSet</span><span class="p">[</span><span class="nf">grep</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="n">cid</span><span class="p">),</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">testSet</span><span class="p">)),</span> <span class="p">]</span>
     <span class="n">perf</span> <span class="o">&lt;-</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="n">test</span><span class="o">$</span><span class="n">Predicted</span><span class="p">,</span> <span class="n">test</span><span class="o">$</span><span class="n">in_vitro</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate the AUC value</span>
+    <span class="n">predRoc</span><span class="o">=</span><span class="nf">prediction</span><span class="p">(</span><span class="n">test</span><span class="o">$</span><span class="n">Mean</span><span class="p">,</span> <span class="n">test</span><span class="o">$</span><span class="n">in_vitro</span><span class="p">)</span>
+    <span class="n">perf_AUC</span><span class="o">=</span><span class="nf">performance</span><span class="p">(</span><span class="n">predRoc</span><span class="p">,</span><span class="s">&quot;auc&quot;</span><span class="p">)</span> <span class="c1">#Calculate the AUC value</span>
+    <span class="n">auroc</span><span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="n">perf_AUC</span><span class="o">@</span><span class="n">y.values</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="m">2</span><span class="p">)</span>
+    <span class="n">perf</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">perf</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span> <span class="n">auroc</span><span class="p">,</span> <span class="n">perf</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">perf</span><span class="p">)[</span><span class="m">6</span><span class="p">]</span><span class="o">=</span><span class="s">&#39;AUC&#39;</span>
+
     <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nModel performance on&quot;</span><span class="p">,</span> <span class="n">allOdor</span><span class="o">$</span><span class="n">Odorant</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="n">cid</span><span class="p">,</span> <span class="n">allOdor</span><span class="o">$</span><span class="n">CID</span><span class="p">)],</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">perf</span><span class="p">)</span>
 <span class="p">}</span>
@@ -16091,15 +16092,19 @@ The test set contained:</p>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<table>
-<thead><tr><th></th><th scope=col>Replicate1</th><th scope=col>Replicate2</th><th scope=col>Replicate3</th><th scope=col>Mean</th><th scope=col>SD</th></tr></thead>
+<table class="dataframe">
+<caption>A data.frame: 6 × 5</caption>
+<thead>
+	<tr><th></th><th scope=col>Prediction1</th><th scope=col>Prediction2</th><th scope=col>Prediction3</th><th scope=col>Mean</th><th scope=col>SD</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><th scope=row>Olfr885_7410</th><td>0.93</td><td>0.90</td><td>0.91</td><td>0.91</td><td>0.02</td></tr>
-	<tr><th scope=row>Olfr885_323</th><td>0.89</td><td>0.87</td><td>0.88</td><td>0.88</td><td>0.01</td></tr>
-	<tr><th scope=row>Olfr205_7410</th><td>0.87</td><td>0.84</td><td>0.84</td><td>0.85</td><td>0.02</td></tr>
-	<tr><th scope=row>hOR8B2_439570</th><td>0.86</td><td>0.85</td><td>0.82</td><td>0.84</td><td>0.02</td></tr>
-	<tr><th scope=row>Olfr194_7410</th><td>0.83</td><td>0.84</td><td>0.84</td><td>0.84</td><td>0.00</td></tr>
-	<tr><th scope=row>Olfr913_7410</th><td>0.84</td><td>0.81</td><td>0.82</td><td>0.82</td><td>0.01</td></tr>
+	<tr><th scope=row>Olfr885_7410</th><td>0.92</td><td>0.93</td><td>0.94</td><td>0.93</td><td>0.01</td></tr>
+	<tr><th scope=row>Olfr885_323</th><td>0.82</td><td>0.84</td><td>0.85</td><td>0.84</td><td>0.01</td></tr>
+	<tr><th scope=row>Olfr194_7410</th><td>0.84</td><td>0.83</td><td>0.82</td><td>0.83</td><td>0.01</td></tr>
+	<tr><th scope=row>Olfr205_7410</th><td>0.84</td><td>0.83</td><td>0.83</td><td>0.83</td><td>0.00</td></tr>
+	<tr><th scope=row>hOR8B2_439570</th><td>0.83</td><td>0.82</td><td>0.81</td><td>0.82</td><td>0.01</td></tr>
+	<tr><th scope=row>Olfr160_7410</th><td>0.78</td><td>0.77</td><td>0.82</td><td>0.79</td><td>0.03</td></tr>
 </tbody>
 </table>
 
@@ -16126,24 +16131,12 @@ The test set contained:</p>
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<dl class=dl-horizontal>
-	<dt>MCC</dt>
-		<dd>0.37</dd>
-	<dt>Precision</dt>
-		<dd>0.44</dd>
-	<dt>Recall</dt>
-		<dd>0.53</dd>
-	<dt>Specificity</dt>
-		<dd>0.86</dd>
-	<dt>TP</dt>
-		<dd>26</dd>
-	<dt>TN</dt>
-		<dd>210</dd>
-	<dt>FP</dt>
-		<dd>33</dd>
-	<dt>FN</dt>
-		<dd>23</dd>
-</dl>
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>MCC</dt><dd>0.44</dd><dt>Precision</dt><dd>0.52</dd><dt>Recall</dt><dd>0.53</dd><dt>F1</dt><dd>0.53</dd><dt>Specificity</dt><dd>0.91</dd><dt>TP</dt><dd>26</dd><dt>TN</dt><dd>247</dd><dt>FP</dt><dd>24</dd><dt>FN</dt><dd>23</dd></dl>
 
 </div>
 
@@ -16158,28 +16151,28 @@ The test set contained:</p>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
 Model performance on R-(-)-Carvone 
-        MCC   Precision      Recall Specificity          TP          TN 
-       0.40        0.56        0.42        0.93        5.00       57.00 
-         FP          FN 
-       4.00        7.00 
+        MCC   Precision      Recall          F1 Specificity         AUC 
+       0.45        0.60        0.46        0.52        0.94        0.72 
+         TP          TN          FP          FN 
+       6.00       63.00        4.00        7.00 
 
 Model performance on acetophenone 
-        MCC   Precision      Recall Specificity          TP          TN 
-       0.32        0.33        0.64        0.77        7.00       48.00 
-         FP          FN 
-      14.00        4.00 
+        MCC   Precision      Recall          F1 Specificity         AUC 
+       0.47        0.39        0.78        0.52        0.85        0.84 
+         TP          TN          FP          FN 
+       7.00       60.00       11.00        2.00 
 
 Model performance on coumarin 
-        MCC   Precision      Recall Specificity          TP          TN 
-       0.34        0.44        0.53        0.83        8.00       48.00 
-         FP          FN 
-      10.00        7.00 
+        MCC   Precision      Recall          F1 Specificity         AUC 
+       0.43        0.58        0.47        0.52        0.92        0.72 
+         TP          TN          FP          FN 
+       7.00       60.00        5.00        8.00 
 
 Model performance on 4-chromanone 
-        MCC   Precision      Recall Specificity          TP          TN 
-       0.46        0.55        0.55        0.92        6.00       57.00 
-         FP          FN 
-       5.00        5.00 
+        MCC   Precision      Recall          F1 Specificity         AUC 
+       0.48        0.60        0.50        0.55        0.94        0.74 
+         TP          TN          FP          FN 
+       6.00       64.00        4.00        6.00 
 </pre>
 </div>
 </div>
